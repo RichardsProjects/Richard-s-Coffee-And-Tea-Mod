@@ -93,14 +93,14 @@ public class BlockMortarAndPestle extends BlockContainer {
    		//Check to make sure it's not null so there is no NPE
    		if(player.inventory.getCurrentItem() != null)
    		{
-   			boolean playEffect = false;
+   			//Handles Coffee Beans
    			if(player.inventory.getCurrentItem().getItem() == ItemCoffeeBeans.roastedBean)
    			{
    				//Reduce Durability of Block
    				if(!world.isRemote)
    				{
    					MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(x, y, z);
-   					t.reduceDurability(world.getBlock(x, y, z), player, world);
+   					t.reduceDurability(world.getBlock(x, y, z), player, world, "c");
    					if(t.getDurability() < 1)
    					{
    						world.setBlockToAir(x, y, z);
@@ -119,6 +119,39 @@ public class BlockMortarAndPestle extends BlockContainer {
    	            {
 					EntityItem entityItem;
 					entityItem = new EntityItem(world, player.lastTickPosX, player.lastTickPosY + 2, player.lastTickPosZ, new ItemStack(ItemCoffeeGrounds.coffeeGrounds, 1));
+					world.spawnEntityInWorld(entityItem);
+   	            }
+   	        }
+   			//Handles Tea Leaves
+   			if(player.inventory.getCurrentItem().getItem() == ItemTeaLeaves.teaLeaves)
+   			{
+   				//Reduce Durability of Block
+   				if(!world.isRemote)
+   				{
+   					MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(x, y, z);
+   					t.reduceDurability(world.getBlock(x, y, z), player, world, "t");
+   					if(t.getDurability() < 1)
+   					{
+   						world.setBlockToAir(x, y, z);
+	   					world.playAuxSFX(2001, x, y, z, Block.getIdFromBlock(Blocks.stone) + (0 << 12));
+   					}
+   				}
+   								
+   				
+   	            //Decrease Stack size
+   	            player.inventory.getCurrentItem().stackSize--;
+   	            
+   	            //Add Coffee Grounds to the player's inventory
+
+   	            
+   	            if(!world.isRemote)
+   	            {
+					EntityItem entityItem;
+					double pX, pY, pZ;
+					pX = player.lastTickPosX;
+					pY = player.lastTickPosY;
+					pZ = player.lastTickPosZ;
+					entityItem = new EntityItem(world, pX, pY + 2, pZ, new ItemStack(ItemGroundTeaLeaves.groundTeaLeaves, 1));
 					world.spawnEntityInWorld(entityItem);
    	            }
    	        }

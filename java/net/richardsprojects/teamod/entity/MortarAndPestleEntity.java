@@ -11,18 +11,31 @@ public class MortarAndPestleEntity extends TileEntity {
 
 	private int durability;
 	
-	public void reduceDurability(Block block, EntityPlayer player, World world)
+	public void reduceDurability(Block block, EntityPlayer player, World world, String type)
 	{
 		//Reduce Durability in the NBT data
 		durability--;
 		
 		//Send Message to Player
-		if(durability == 1) {
-			player.addChatComponentMessage(new ChatComponentText("\u00a77You grind the Coffee Bean into coffee grounds. \u00a7f(" + durability + " use left)"));
-		}
-		else
+		if(type.equals("c"))
 		{
-			player.addChatComponentMessage(new ChatComponentText("\u00a77You grind the Coffee Bean into coffee grounds. \u00a7f(" + durability + " uses left)"));
+			if(durability == 1) {
+				player.addChatComponentMessage(new ChatComponentText("\u00a77You grind the Coffee Bean into coffee grounds. \u00a7f(" + durability + " use left)"));
+			}
+			else
+			{
+				player.addChatComponentMessage(new ChatComponentText("\u00a77You grind the Coffee Bean into coffee grounds. \u00a7f(" + durability + " uses left)"));
+			}
+		}
+		if(type.equals("t"))
+		{
+			if(durability == 1) {
+				player.addChatComponentMessage(new ChatComponentText("\u00a77You grind the Tea Leaf into ground tea leaves. \u00a7f(" + durability + " use left)"));
+			}
+			else
+			{
+				player.addChatComponentMessage(new ChatComponentText("\u00a77You grind the Tea Leaf into ground tea leaves. \u00a7f(" + durability + " uses left)"));
+			}
 		}
 		//Refreshes the block causing the nbt data to be saved
 		world.notifyBlockChange(xCoord, yCoord, zCoord, block);

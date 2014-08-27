@@ -47,7 +47,7 @@ public class ItemMortarAndPestle extends Item
 		{
 			
 			if(itemStack.getItem() == mortarAndPestle) {
-				if((world.getBlock(p_77648_4_, p_77648_5_, p_77648_6_) != Blocks.crafting_table) || (world.getBlock(p_77648_4_, p_77648_5_, p_77648_6_) == Blocks.crafting_table && player.isSneaking()))
+				if((world.getBlock(p_77648_4_, p_77648_5_, p_77648_6_) != Blocks.crafting_table) || (world.getBlock(p_77648_4_, p_77648_5_, p_77648_6_) == Blocks.crafting_table && player.isSneaking()) && itemStack.getItemDamage() != itemStack.getMaxDamage() - 1)
 				{
 					if(player.getRotationYawHead() >= 0 && player.getRotationYawHead() <= 90)
 					{

@@ -62,16 +62,29 @@ public class TeaMod {
 		 	registerBlocksAndItems();
 	    	registerTileEntities();
     	
-		    //Add Spawns to Chests
-		    ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(ItemCoffeeBeans.roastedBean), 5, 24, 065));
-		    ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(new ItemStack(ItemTeaLeaves.teaLeaves), 5, 24, 065));
+		    //Add Spawns to Chests - trying to keep lines under 80 characters.
+	    	WeightedRandomChestContent chestContent1;
+	    	ItemStack coffee = new ItemStack(ItemCoffeeBeans.roastedBean);
+	    	chestContent1 = new WeightedRandomChestContent(coffee, 5, 24, 065);
+		    ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(chestContent1);
+	    	WeightedRandomChestContent chestContent2;
+	    	ItemStack teaLeaves = new ItemStack(ItemTeaLeaves.teaLeaves);
+	    	chestContent2 = new WeightedRandomChestContent(teaLeaves, 5, 24, 065);
+		    ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(chestContent2);
 		    
 		    //Mineshafts
-		    ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(ItemCoffeeBeans.unroastedBean), 2, 5, 065));
-		    ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(new ItemStack(ItemTeaSeeds.teaSeeds), 2, 5, 065));
+		    ItemStack coffeeSeed = new ItemStack(ItemCoffeeBeans.unroastedBean);
+		    WeightedRandomChestContent chest1;
+		    chest1 = new WeightedRandomChestContent(coffeeSeed, 2, 5, 065);
+		    ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(chest1);
+		    WeightedRandomChestContent chest2;
+		    ItemStack teaSeeds = new ItemStack(ItemTeaSeeds.teaSeeds);
+		    chest2 = new WeightedRandomChestContent(teaSeeds, 2, 5, 065);
+		    ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(chest2);
 	    	
 		    //Add Custom Trades for farmer
-		    VillagerRegistry.instance().registerVillageTradeHandler(0, new TradeHandler());
+		    TradeHandler th = new TradeHandler();
+		    VillagerRegistry.instance().registerVillageTradeHandler(0, th);
 		    
 	    	//Setup Events
 	    	MinecraftForge.EVENT_BUS.register(new MCForgeModEvents());
@@ -119,6 +132,7 @@ public class TeaMod {
     	ItemMortarAndPestle.mainRegistry();
     	ItemTeaSeeds.mainRegistry();
     	ItemTeaLeaves.mainRegistry();
+    	ItemGroundTeaLeaves.mainRegistry();
     	
     	//Add Seeds
     	MinecraftForge.addGrassSeed(new ItemStack(ItemCoffeeBeans.unroastedBean, 1), 5);
@@ -149,6 +163,10 @@ public class TeaMod {
         GameRegistry.addShapelessRecipe(new ItemStack(ItemCoffeeGrounds.coffeeGrounds),
         		new ItemStack(ItemCoffeeBeans.roastedBean), new ItemStack(ItemMortarAndPestle.mortarAndPestle, 1, WILDCARD_VALUE));
         
+    	//Ground Tea Leaves
+        GameRegistry.addShapelessRecipe(new ItemStack(ItemGroundTeaLeaves.groundTeaLeaves),
+        		new ItemStack(ItemTeaLeaves.teaLeaves), new ItemStack(ItemMortarAndPestle.mortarAndPestle, 1, WILDCARD_VALUE));
+        
         //Add Coffee Recipe
     	GameRegistry.addRecipe(new ItemStack(ItemCoffeeCup.fullCoffeeCup), "xxx", "xyx", "xxx",
     			'x', new ItemStack(ItemCoffeeGrounds.coffeeGrounds, 1), 'y', new ItemStack(ItemBoilingWaterCup.boilingWaterCup, 1));
@@ -163,7 +181,7 @@ public class TeaMod {
     	
         //Add Tea Recipe
     	GameRegistry.addRecipe(new ItemStack(ItemTeaCup.fullTeaCup), "xxx", "xyx", "xxx",
-    			'x', new ItemStack(ItemTeaLeaves.teaLeaves, 1), 'y', new ItemStack(ItemBoilingWaterCup.boilingWaterCup, 1));
+    			'x', new ItemStack(ItemGroundTeaLeaves.groundTeaLeaves, 1), 'y', new ItemStack(ItemBoilingWaterCup.boilingWaterCup, 1));
     	
         //Coffee with Sugar
     	GameRegistry.addRecipe(new ItemStack(ItemCoffeeCupSugar.fullCoffeeCupSugar), "xxx", "xyx", "xxx",

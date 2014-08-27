@@ -21,7 +21,7 @@ public class FMLModEvents {
 	            if(j.getItem() != null && j.getItem() == ItemMortarAndPestle.mortarAndPestle)
 	            {
 	            	ItemStack k = null;
-	            	if(j.getItemDamage() == j.getMaxDamage())
+	            	if(j.getItemDamage() == j.getMaxDamage() - 1)
 	            	{
 	            		k = new ItemStack(ItemMortarAndPestle.mortarAndPestle, 1, j.getItemDamage() + 1);
 	            	}
