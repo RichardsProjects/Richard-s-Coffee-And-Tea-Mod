@@ -1,5 +1,7 @@
 package net.richardsprojects.teamod.main;
 
+import org.apache.logging.log4j.Logger;
+
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
@@ -52,13 +54,19 @@ public class TeaMod {
 		}
 	};
 	
+	public static Logger logger;
+	
     // The instance of your mod that Forge uses.
     @Instance("TeaMod")
     public static TeaMod instance;
 	
-	 @EventHandler 
-	 public void preInit(FMLPreInitializationEvent event) {
+    
+    
+	@EventHandler 
+	public void preInit(FMLPreInitializationEvent event) {
 		 
+			logger = event.getModLog();
+		
 		 	registerBlocksAndItems();
 	    	registerTileEntities();
     	
@@ -107,6 +115,13 @@ public class TeaMod {
         ClientRegistry.bindTileEntitySpecialRenderer(MortarAndPestleEntity.class, new MortarAndPestleRenderer());
     }
 	
+	@EventHandler
+	public void init(FMLInitializationEvent event)
+	{
+		//Register World Generator
+		GameRegistry.registerWorldGenerator(new BushWorldGenerator(), 0);
+	}
+	 
  
 	private void registerBlocksAndItems()
 	{
