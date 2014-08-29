@@ -13,6 +13,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.block.Block;
@@ -167,5 +168,62 @@ public class BlockTeaBush extends BlockContainer implements IGrowable {
         return null;
     }
     
+    @SideOnly(Side.CLIENT)
+    @Override
+    public AxisAlignedBB getSelectedBoundingBoxFromPool(World p_149633_1_, int p_149633_2_, int p_149633_3_, int p_149633_4_)
+    {
+        this.setBlockBoundsBasedOnState(p_149633_1_, p_149633_2_, p_149633_3_, p_149633_4_);
+        return super.getSelectedBoundingBoxFromPool(p_149633_1_, p_149633_2_, p_149633_3_, p_149633_4_);
+    }
+
+    /**
+     * Returns a bounding box from the pool of bounding boxes (this means this box can change after the pool has been
+     * cleared to be reused)
+     */
+    @Override
+    public AxisAlignedBB getCollisionBoundingBoxFromPool(World p_149668_1_, int p_149668_2_, int p_149668_3_, int p_149668_4_)
+    {
+        this.setBlockBoundsBasedOnState(p_149668_1_, p_149668_2_, p_149668_3_, p_149668_4_);
+        return super.getCollisionBoundingBoxFromPool(p_149668_1_, p_149668_2_, p_149668_3_, p_149668_4_);
+    }
+
+    /**
+     * Updates the blocks bounds based on its current state. Args: world, x, y, z
+     */
+    public void setBlockBoundsBasedOnState(World world, int x, int y, int z)
+    {
+        if(world.getBlockMetadata(x, y, z) == 0)
+        {
+        	this.setBlockBounds(0.0F, 0.0F, 0.0F, 1F, 0.25F, 1F);
+        }
+        else if(world.getBlockMetadata(x, y, z) == 1)
+        {
+        	this.setBlockBounds(0.2F, 0.0F, 0.2F, 0.8F, 0.25F, 0.8F);
+        }
+        else if(world.getBlockMetadata(x, y, z) == 2)
+        {
+        	this.setBlockBounds(0.17F, 0.0F, 0.17F, 0.83F, 0.36F, 0.83F);
+        }
+        else if(world.getBlockMetadata(x, y, z) == 3)
+        {
+        	this.setBlockBounds(0.13F, 0.0F, 0.13F, 0.86F, 0.50F, 0.86F);
+        }
+        else if(world.getBlockMetadata(x, y, z) == 4)
+        {
+        	this.setBlockBounds(0.115F, 0.0F, 0.115F, 0.88F, 0.62F, 0.88F);
+        }
+        else if(world.getBlockMetadata(x, y, z) == 5)
+        {
+        	this.setBlockBounds(0.085F, 0.0F, 0.085F, 0.91F, 0.74F, 0.91F);
+        }
+        else if(world.getBlockMetadata(x, y, z) == 6)
+        {
+        	this.setBlockBounds(0.055F, 0.0F, 0.050F, 0.925F, 0.86F, 0.925F);
+        }
+        else if(world.getBlockMetadata(x, y, z) == 7)
+        {
+        	this.setBlockBounds(0F, 0F, 0F, 1F, 1F, 1F);
+        }
+    }
     
 }
