@@ -121,10 +121,6 @@ public class ModelMortarAndPestle extends ModelBase
     super.render(te, f, f1, f2, f3, f4, f5);
     setRotationAngles(f, f1, f2, f3, f4, f5, te);
     
-    //TODO: One day make the mortar and pestle appear cracked as it is used more
-    ResourceLocation texture0 = (new ResourceLocation("teamod:textures/blocks/stone.png"));
-    Minecraft.getMinecraft().renderEngine.bindTexture(texture0);
-        
     BowlBottom.render(f5);
     Shape1.render(f5);
     Shape2.render(f5);

@@ -37,6 +37,22 @@ public class MortarAndPestleEntity extends TileEntity {
 				player.addChatComponentMessage(new ChatComponentText("\u00a77You grind the Tea Leaf into ground tea leaves. \u00a7f(" + durability + " uses left)"));
 			}
 		}
+		
+		//Update the Block's metadata value based on durability
+		int m = world.getTileEntity(xCoord, yCoord, zCoord).blockMetadata;
+		if(durability < 49 && durability > 32 && m < 4)
+		{
+			world.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, m + 4, 1);
+		}
+		if(durability < 33 && durability > 16 && m < 8 && m > 3)
+		{
+			world.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, m + 4, 1);
+		}
+		if(durability < 17 && durability > 0 && m < 12 && m > 7)
+		{
+			world.setBlockMetadataWithNotify(xCoord, yCoord, zCoord, m + 4, 1);
+		}
+		
 		//Refreshes the block causing the nbt data to be saved
 		world.notifyBlockChange(xCoord, yCoord, zCoord, block);
 	}

@@ -9,6 +9,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.terraingen.BiomeEvent;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.richardsprojects.teamod.entity.MortarAndPestleEntity;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -134,5 +135,5 @@ public class MCForgeModEvents {
 			
 		}
 	}
-
+	
 }

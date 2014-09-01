@@ -48,7 +48,40 @@ public class MortarAndPestleRenderer extends TileEntitySpecialRenderer {
             //This rotation part is very important! Without it, your model will render upside-down! And for some reason you DO need PushMatrix again!                      
             GL11.glPushMatrix();
             GL11.glRotatef(180F, 0.0F, 0.0F, 1.0F);
-            GL11.glRotatef(90F * te.getBlockMetadata(), 0.0F, 1.0F, 0.0F);
+            
+            //Calculate rotation based on metadata
+            int rotation = 1;
+            int m = te.getBlockMetadata();
+            if(m == 0 || m == 4 || m == 8 || m == 12) rotation = 1;
+            if(m == 1 || m == 5 || m == 9 || m == 13) rotation = 2;
+            if(m == 2 || m == 6 || m == 10 || m == 14) rotation = 3;
+            if(m == 3 || m == 7 || m == 11 || m == 15) rotation = 4;
+            GL11.glRotatef(90F * rotation, 0.0F, 1.0F, 0.0F);
+            
+            //Load Textures
+            ResourceLocation texture0;
+            ResourceLocation texture1;
+            ResourceLocation texture2;
+            ResourceLocation texture3;
+            texture0 = new ResourceLocation("teamod:textures/blocks/stone.png");
+            texture1 = new ResourceLocation("teamod:textures/blocks/stone1.png");
+            texture2 = new ResourceLocation("teamod:textures/blocks/stone2.png");
+            texture3 = new ResourceLocation("teamod:textures/blocks/stone3.png");
+            
+            //Bind Texture based on Metadata
+            if(m < 4) {
+            	Minecraft.getMinecraft().renderEngine.bindTexture(texture0);
+            }
+            if(m < 8 && m > 3) {
+            	Minecraft.getMinecraft().renderEngine.bindTexture(texture1);
+            }
+            if(m < 12 && m > 7) {
+            	Minecraft.getMinecraft().renderEngine.bindTexture(texture2);
+            }
+            if(m < 16 && m > 11) {
+            	Minecraft.getMinecraft().renderEngine.bindTexture(texture3);
+            }
+            
             
            	//Render Model
             this.model1.render((Entity)null, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);

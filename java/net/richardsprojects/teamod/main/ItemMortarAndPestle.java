@@ -52,28 +52,28 @@ public class ItemMortarAndPestle extends Item
 					if(player.getRotationYawHead() >= 0 && player.getRotationYawHead() <= 90)
 					{
 						world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle);
-						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 1, 1);
+						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 0, 1);
 						MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(p_77648_4_, p_77648_5_ + 1, p_77648_6_);
 						t.setDurability(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_), world, 64);
 					}
 					if(player.getRotationYawHead() >= 90 && player.getRotationYawHead() <= 180)
 					{
 						world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle);
-						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 2, 1);
+						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 1, 1);
 						MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(p_77648_4_, p_77648_5_ + 1, p_77648_6_);
 						t.setDurability(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_), world, 64);
 					}
 					if(player.getRotationYawHead() >= 180 && player.getRotationYawHead() <= 270)
 					{
 						world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle);
-						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 3, 1);
+						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 2, 1);
 						MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(p_77648_4_, p_77648_5_ + 1, p_77648_6_);
 						t.setDurability(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_), world, 64);
 					}
 					if(player.getRotationYawHead() >= 270 && player.getRotationYawHead() <= 360)
 					{
 						world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle);
-						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 1, 1);
+						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 3, 1);
 						MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(p_77648_4_, p_77648_5_ + 1, p_77648_6_);
 						t.setDurability(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_), world, 64);
 					}
