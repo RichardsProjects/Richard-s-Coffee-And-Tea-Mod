@@ -43,50 +43,43 @@ public class ItemMortarAndPestle extends Item
 		{
 			return false;
 		}
-		else if (player.canPlayerEdit(p_77648_4_, p_77648_5_ + 1, p_77648_6_, p_77648_7_, itemStack))
+		else if(itemStack.getItem() == mortarAndPestle)
 		{
-			
-			if(itemStack.getItem() == mortarAndPestle) {
-				if((world.getBlock(p_77648_4_, p_77648_5_, p_77648_6_) != Blocks.crafting_table) || (world.getBlock(p_77648_4_, p_77648_5_, p_77648_6_) == Blocks.crafting_table && player.isSneaking()) && itemStack.getItemDamage() != itemStack.getMaxDamage() - 1)
+			if((world.getBlock(p_77648_4_, p_77648_5_, p_77648_6_) != Blocks.crafting_table) || (world.getBlock(p_77648_4_, p_77648_5_, p_77648_6_) == Blocks.crafting_table && player.isSneaking()) && itemStack.getItemDamage() != itemStack.getMaxDamage() - 1)
+			{
+				if(player.getRotationYawHead() >= 0 && player.getRotationYawHead() < 90)
 				{
-					if(player.getRotationYawHead() >= 0 && player.getRotationYawHead() <= 90)
-					{
-						world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle);
-						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 0, 1);
-						MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(p_77648_4_, p_77648_5_ + 1, p_77648_6_);
-						t.setDurability(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_), world, 64);
-					}
-					if(player.getRotationYawHead() >= 90 && player.getRotationYawHead() <= 180)
-					{
-						world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle);
-						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 1, 1);
-						MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(p_77648_4_, p_77648_5_ + 1, p_77648_6_);
-						t.setDurability(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_), world, 64);
-					}
-					if(player.getRotationYawHead() >= 180 && player.getRotationYawHead() <= 270)
-					{
-						world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle);
-						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 2, 1);
-						MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(p_77648_4_, p_77648_5_ + 1, p_77648_6_);
-						t.setDurability(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_), world, 64);
-					}
-					if(player.getRotationYawHead() >= 270 && player.getRotationYawHead() <= 360)
-					{
-						world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle);
-						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 3, 1);
-						MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(p_77648_4_, p_77648_5_ + 1, p_77648_6_);
-						t.setDurability(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_), world, 64);
-					}
-					itemStack.stackSize--;
+					world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle);
+					world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 0, 1);
+					MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(p_77648_4_, p_77648_5_ + 1, p_77648_6_);
+					t.setDurability(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_), world, 64);
 				}
-			}
+				if(player.getRotationYawHead() >= 90 && player.getRotationYawHead() < 180)
+				{
+					world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle);
+					world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 1, 1);
+					MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(p_77648_4_, p_77648_5_ + 1, p_77648_6_);
+					t.setDurability(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_), world, 64);
+					}
+				if(player.getRotationYawHead() >= 180 && player.getRotationYawHead() < 270)
+				{
+					world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle);
+						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 2, 1);
+					MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(p_77648_4_, p_77648_5_ + 1, p_77648_6_);
+					t.setDurability(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_), world, 64);
+				}
+				if(player.getRotationYawHead() >= 270 && player.getRotationYawHead() <= 360)
+				{
+					world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle);
+					world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 3, 1);
+					MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(p_77648_4_, p_77648_5_ + 1, p_77648_6_);
+					t.setDurability(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_), world, 64);
+				}
+			itemStack.stackSize--;
 			return true;
+			}
 		}
-		else
-		{
-			System.out.println("case5");
-			return false;
-	    }
+		return false;
 	}
 	
 }

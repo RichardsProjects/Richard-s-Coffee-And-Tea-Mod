@@ -49,10 +49,10 @@ public class ThreadCheckForUpdates implements Runnable {
 				  player.addChatComponentMessage(new ChatComponentText("\u00a7eError checking for updates to the Coffee & Tea Mod."));
 			  }
 		  }
-		  else if(returnData.equals("1.1"))
+		  else if(returnData.equals("1.2.1"))
 		  {
 			  if(!TempData.players.contains(player.getDisplayName())) {
-				  player.addChatComponentMessage(new ChatComponentText("\u00a7eThe Coffee & Tea Mod is up to date. v1.1"));
+				  player.addChatComponentMessage(new ChatComponentText("\u00a7eThe Coffee & Tea Mod is up to date. v1.2.1"));
 			  }
 		  }
 		  else
