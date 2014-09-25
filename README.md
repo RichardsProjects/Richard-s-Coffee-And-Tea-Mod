@@ -8,3 +8,7 @@ You can download the latest stable version of the mod from the Minecraft Forum t
 Developers
 --------------
 - Glorfindel22 (AKA RichardPlaysMC)
+
+Contributors
+--------------
+- Pharade (Art)
