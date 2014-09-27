@@ -45,7 +45,8 @@ public class ItemMortarAndPestle extends Item
 			{
 				if(player.getRotationYawHead() >= 0 && player.getRotationYawHead() < 90)
 				{
-					if(world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle)) {
+					world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle);
+					if(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_) == BlockMortarAndPestle.mortarAndPestle){
 						MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(p_77648_4_, p_77648_5_ + 1, p_77648_6_);
 						int durability = 64 - itemStack.getItemDamage();
 						t.setDurability(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_), world, durability);
@@ -68,7 +69,8 @@ public class ItemMortarAndPestle extends Item
 				}
 				if(player.getRotationYawHead() >= 90 && player.getRotationYawHead() < 180)
 				{
-					if(world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle)) {
+					world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle);
+					if(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_) == BlockMortarAndPestle.mortarAndPestle){
 						MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(p_77648_4_, p_77648_5_ + 1, p_77648_6_);
 						int durability = 64 - itemStack.getItemDamage();
 						t.setDurability(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_), world, durability);
@@ -91,7 +93,8 @@ public class ItemMortarAndPestle extends Item
 				}
 				if(player.getRotationYawHead() >= 180 && player.getRotationYawHead() < 270)
 				{
-					if(world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle)) {
+					world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle);
+					if(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_) == BlockMortarAndPestle.mortarAndPestle){
 						MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(p_77648_4_, p_77648_5_ + 1, p_77648_6_);
 						int durability = 64 - itemStack.getItemDamage();
 						t.setDurability(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_), world, durability);
@@ -114,7 +117,8 @@ public class ItemMortarAndPestle extends Item
 				}
 				if(player.getRotationYawHead() >= 270 && player.getRotationYawHead() <= 360)
 				{
-					if(world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle)) {
+					world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockMortarAndPestle.mortarAndPestle);
+					if(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_) == BlockMortarAndPestle.mortarAndPestle){
 						MortarAndPestleEntity t = (MortarAndPestleEntity) world.getTileEntity(p_77648_4_, p_77648_5_ + 1, p_77648_6_);
 						int durability = 64 - itemStack.getItemDamage();
 						t.setDurability(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_), world, durability);

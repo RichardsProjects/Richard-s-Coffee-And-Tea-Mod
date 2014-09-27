@@ -45,28 +45,32 @@ public class ItemTeaCup extends Item
 			{
 				if(player.getRotationYawHead() >= 0 && player.getRotationYawHead() < 90)
 				{
-					if(world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockFullTeaCup.fullTeaCup)) {
+					world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockFullTeaCup.fullTeaCup);
+					if(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_) == BlockFullTeaCup.fullTeaCup) {
 						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 1, 1);
 						if(!player.capabilities.isCreativeMode) itemStack.stackSize--;
 					}
 				}
 				if(player.getRotationYawHead() >= 90 && player.getRotationYawHead() < 180)
 				{
-					if(world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockFullTeaCup.fullTeaCup)) {
+					world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockFullTeaCup.fullTeaCup);
+					if(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_) == BlockFullTeaCup.fullTeaCup){
 						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 2, 1);
 						if(!player.capabilities.isCreativeMode) itemStack.stackSize--;
 					}
 				}
 				if(player.getRotationYawHead() >= 180 && player.getRotationYawHead() < 270)
 				{
-					if(world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockFullTeaCup.fullTeaCup)) {
+					world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockFullTeaCup.fullTeaCup);
+					if(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_) == BlockFullTeaCup.fullTeaCup){
 						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 3, 1);
 						if(!player.capabilities.isCreativeMode) itemStack.stackSize--;
 					}
 				}
 				if(player.getRotationYawHead() >= 270 && player.getRotationYawHead() <= 360)
 				{
-					if(world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockFullTeaCup.fullTeaCup)) {
+					world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockFullTeaCup.fullTeaCup);
+					if(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_) == BlockFullTeaCup.fullTeaCup) {
 						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 4, 1);
 						if(!player.capabilities.isCreativeMode) itemStack.stackSize--;
 					}
@@ -86,21 +90,24 @@ public class ItemTeaCup extends Item
 				}
 				if(player.getRotationYawHead() >= 90 && player.getRotationYawHead() < 180)
 				{
-					if(world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockHalfTeaCup.halfTeaCup)) {
+					world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockHalfTeaCup.halfTeaCup);
+					if(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_) == BlockHalfTeaCup.halfTeaCup){
 						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 2, 1);
 						if(!player.capabilities.isCreativeMode) itemStack.stackSize--;
 					}
 				}
 				if(player.getRotationYawHead() >= 180 && player.getRotationYawHead() < 270)
 				{
-					if(world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockHalfTeaCup.halfTeaCup)) {
+					world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockHalfTeaCup.halfTeaCup);
+					if(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_) == BlockHalfTeaCup.halfTeaCup){
 						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 3, 1);
 						if(!player.capabilities.isCreativeMode) itemStack.stackSize--;
 					}
 				}
 				if(player.getRotationYawHead() >= 270 && player.getRotationYawHead() <= 360)
 				{
-					if(world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockHalfTeaCup.halfTeaCup)) {
+					world.setBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_, BlockHalfTeaCup.halfTeaCup);
+					if(world.getBlock(p_77648_4_, p_77648_5_ + 1, p_77648_6_) == BlockHalfTeaCup.halfTeaCup){
 						world.setBlockMetadataWithNotify(p_77648_4_, p_77648_5_ + 1, p_77648_6_, 4, 1);
 						if(!player.capabilities.isCreativeMode) itemStack.stackSize--;
 					}
