@@ -7,8 +7,8 @@ You can download the latest stable version of the mod from the Minecraft Forum t
 
 Developers
 --------------
-- Glorfindel22 (AKA RichardPlaysMC)
+- [Glorfindel22](http://www.minecraftforum.net/members/Glorfindel22)
 
 Contributors
 --------------
-- Pharade (Art)
+- [Pharade](http://www.minecraftforum.net/members/Pharade) (Art)
