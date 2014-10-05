@@ -32,6 +32,8 @@ import net.richardsprojects.teamod.entity.FullTeaCupEntity;
 import net.richardsprojects.teamod.entity.HalfCoffeeCupEntity;
 import net.richardsprojects.teamod.entity.HalfTeaCupEntity;
 import net.richardsprojects.teamod.entity.MortarAndPestleEntity;
+import net.richardsprojects.teamod.entity.TableLeftEntity;
+import net.richardsprojects.teamod.entity.TableRightEntity;
 import net.richardsprojects.teamod.entity.TeaBushEntity;
 import net.richardsprojects.teamod.lib.Strings;
 import net.richardsprojects.teamod.render.CoffeeBushRenderer;
@@ -41,6 +43,8 @@ import net.richardsprojects.teamod.render.FullTeaCupRenderer;
 import net.richardsprojects.teamod.render.HalfCoffeeCupRenderer;
 import net.richardsprojects.teamod.render.HalfTeaCupRenderer;
 import net.richardsprojects.teamod.render.MortarAndPestleRenderer;
+import net.richardsprojects.teamod.render.TableLeftRenderer;
+import net.richardsprojects.teamod.render.TableRightRenderer;
 import net.richardsprojects.teamod.render.TeaBushRenderer;
 
 @Mod(modid=Strings.MODID, name=Strings.MOD_NAME, version=Strings.VERSION)
@@ -113,6 +117,8 @@ public class TeaMod {
         ClientRegistry.bindTileEntitySpecialRenderer(FullTeaCupEntity.class, new FullTeaCupRenderer());
         ClientRegistry.bindTileEntitySpecialRenderer(TeaBushEntity.class, new TeaBushRenderer());
         ClientRegistry.bindTileEntitySpecialRenderer(MortarAndPestleEntity.class, new MortarAndPestleRenderer());
+        ClientRegistry.bindTileEntitySpecialRenderer(TableRightEntity.class, new TableRightRenderer());
+        ClientRegistry.bindTileEntitySpecialRenderer(TableLeftEntity.class, new TableLeftRenderer());
     }
 	
 	@EventHandler
@@ -148,6 +154,9 @@ public class TeaMod {
     	ItemTeaSeeds.mainRegistry();
     	ItemTeaLeaves.mainRegistry();
     	ItemGroundTeaLeaves.mainRegistry();
+    	BlockTableLeft.mainRegistry();
+    	BlockTableRight.mainRegistry();
+    	ItemCoffeeTable.mainRegistry();
     	
     	//Add Seeds
     	MinecraftForge.addGrassSeed(new ItemStack(ItemCoffeeBeans.unroastedBean, 1), 5);
@@ -164,6 +173,8 @@ public class TeaMod {
     	GameRegistry.registerTileEntity(FullTeaCupEntity.class, "fullTeaCup");
     	GameRegistry.registerTileEntity(TeaBushEntity.class, "teaBush");
     	GameRegistry.registerTileEntity(MortarAndPestleEntity.class, "mortarAndPestleEntity");
+    	GameRegistry.registerTileEntity(TableLeftEntity.class, "coffeeTableLeft");
+    	GameRegistry.registerTileEntity(TableRightEntity.class, "coffeeTableRight");
 	}
 	
 	private void addRecipes()
