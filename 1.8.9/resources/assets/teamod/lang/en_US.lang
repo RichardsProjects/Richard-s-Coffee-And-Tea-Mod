@@ -3,5 +3,6 @@ itemGroup.tabCoffeeAndTea=Richard's Coffee and Tea Mod
 item.teaSeed.name=Tea Seed
 item.unroastedCoffeeBean.name=Coffee Bean
 item.roastedCoffeeBean.name=Roasted Coffee Bean
+item.clayCup.name=Clay Cup (Unfinished)
 
 tile.emptyCup.name=Empty Cup

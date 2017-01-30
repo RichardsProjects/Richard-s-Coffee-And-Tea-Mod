@@ -8,7 +8,7 @@ import net.richardsprojects.teamod.CoffeeAndTeaMod;
 public class BlockEmptyCup extends Block {
 
 	public BlockEmptyCup() {
-		super(Material.wood);		
+		super(Material.wood);
 		this.setBlockBounds(0.2F, 0.0F, 0.2F, 0.8F, 0.495F, 0.8F);
 		this.setCreativeTab(CoffeeAndTeaMod.teaTab);
 	}

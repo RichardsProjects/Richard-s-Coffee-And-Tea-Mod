@@ -11,11 +11,13 @@ public class CoffeeAndTeaModItems {
 	public static Item unroastedCoffeeBean;
 	public static Item roastedCoffeeBean;
 	public static Item teaSeed;
+	public static Item clayCup;
 	
 	public static void init() {
 		unroastedCoffeeBean = new ItemUnroastedCoffeeBean();
 		roastedCoffeeBean = new ItemRoastedCoffeeBean();
 		teaSeed = new ItemTeaSeed();
+		clayCup = new ItemClayCup();
 	}
 	
 	public static void register() {
@@ -25,13 +27,15 @@ public class CoffeeAndTeaModItems {
 				.substring(5));
 		GameRegistry.registerItem(teaSeed, teaSeed.getUnlocalizedName()
 				.substring(5));
-		
+		GameRegistry.registerItem(clayCup, clayCup.getUnlocalizedName()
+				.substring(5));
 	}
 	
 	public static void registerRenders() {
 		registerRender(unroastedCoffeeBean);
 		registerRender(roastedCoffeeBean);
 		registerRender(teaSeed);
+		registerRender(clayCup);
 	}
 	
 	public static void registerRender(Item item) {

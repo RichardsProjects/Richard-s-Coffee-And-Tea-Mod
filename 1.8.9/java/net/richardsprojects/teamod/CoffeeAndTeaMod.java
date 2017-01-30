@@ -1,6 +1,8 @@
 package net.richardsprojects.teamod;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.WeightedRandomChestContent;
+import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -23,9 +25,12 @@ public class CoffeeAndTeaMod {
 	/*
 	 * ToDo List:
 	 * [X] Implement empty cup
-	 * [ ] Implement clay cup and way to create empty cups
+	 * [X] Implement clay cup and way to create empty cups
 	 * [X] Implement coffee beans and tea seeds
 	 * [X] Make seeds drop from tall grass
+	 * [ ] Create ItemBlock class for all the blocks to set max stack size
+	 *     and because it will be needed when I update to 1.8
+	 * [ ] Implement facing direction on cups
 	 * [ ] Add coffee and tea plants
 	 * [ ] Make tea seeds and coffee beans plant their plants
 	 * [ ] Add mortar and pestle
@@ -34,6 +39,8 @@ public class CoffeeAndTeaMod {
 	 * [ ] Make coffee and tea drinkable
 	 * [ ] Add coffee with sugar
 	 * [ ] Add coffee beans and tea seeds to Dungeon drop lists
+	 * [ ] Add trades with villagers like 1.7 version has
+	 * [X] Add mineshafts loot like 1.7 version
 	 */
 	
 	@EventHandler
@@ -44,8 +51,17 @@ public class CoffeeAndTeaMod {
 		CoffeeAndTeaModItems.init();
 		CoffeeAndTeaModItems.register();
 		
-		// Register Recipes
-		//Recipes.register();
+	    // add loot to chests in mineshafts
+	    ItemStack coffeeSeed = new ItemStack(CoffeeAndTeaModItems.unroastedCoffeeBean);
+	    WeightedRandomChestContent chest1;
+	    chest1 = new WeightedRandomChestContent(coffeeSeed, 2, 5, 065);
+	    ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(chest1);
+	    WeightedRandomChestContent chest2;
+	    ItemStack teaSeeds = new ItemStack(CoffeeAndTeaModItems.teaSeed);
+	    chest2 = new WeightedRandomChestContent(teaSeeds, 2, 5, 065);
+	    ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(chest2);
+	
+		Recipes.register(); // add recipes
 		
     	// Register Event Handlers
     	//MinecraftForge.EVENT_BUS.register(new MCForgeModEvents());
