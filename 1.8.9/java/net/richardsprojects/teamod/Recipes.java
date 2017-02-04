@@ -16,6 +16,9 @@ public class Recipes {
 		// smelt clay cup into empty cup
 		GameRegistry.addSmelting(CoffeeAndTeaModItems.clayCup, new ItemStack(
 				CoffeeAndTeaModBlocks.emptyCup, 1), 0.0f);
+		// smelt roasted coffee beans
+		GameRegistry.addSmelting(CoffeeAndTeaModItems.unroastedCoffeeBean,
+				new ItemStack(CoffeeAndTeaModItems.roastedCoffeeBean, 1), 0.0f);
 	}
 
 }

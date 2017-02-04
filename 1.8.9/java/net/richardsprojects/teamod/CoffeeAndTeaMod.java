@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.VillagerRegistry;
 import net.richardsprojects.teamod.blocks.CoffeeAndTeaModBlocks;
 import net.richardsprojects.teamod.items.CoffeeAndTeaModItems;
 import net.richardsprojects.teamod.proxy.CommonProxy;
@@ -30,7 +31,7 @@ public class CoffeeAndTeaMod {
 	 * [X] Make seeds drop from tall grass
 	 * [ ] Create ItemBlock class for all the blocks to set max stack size
 	 *     and because it will be needed when I update to 1.8
-	 * [ ] Implement facing direction on cups
+	 * [X] Implement facing direction on empty cup
 	 * [ ] Add coffee and tea plants
 	 * [ ] Make tea seeds and coffee beans plant their plants
 	 * [ ] Add mortar and pestle
@@ -40,6 +41,7 @@ public class CoffeeAndTeaMod {
 	 * [ ] Add coffee with sugar
 	 * [ ] Add coffee beans and tea seeds to Dungeon drop lists
 	 * [ ] Add trades with villagers like 1.7 version has
+	 * 		- Use this link for reference: https://gist.github.com/Thutmose/1b11be61a4d340fa45ae
 	 * [X] Add mineshafts loot like 1.7 version
 	 */
 	
