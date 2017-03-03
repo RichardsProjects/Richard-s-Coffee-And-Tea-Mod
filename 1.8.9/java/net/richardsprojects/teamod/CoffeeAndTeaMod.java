@@ -32,8 +32,11 @@ public class CoffeeAndTeaMod {
 	 * [ ] Create ItemBlock class for all the blocks to set max stack size
 	 *     and because it will be needed when I update to 1.8
 	 * [X] Implement facing direction on empty cup
-	 * [ ] Add coffee and tea plants
+	 * [X] Add coffee plant
+	 * [ ] Add tea plant
 	 * [ ] Make tea seeds and coffee beans plant their plants
+	 * [ ] Add breaking texture for coffee and tea plants
+	 * [ ] Make the bounding box different for each state of plants 
 	 * [ ] Add mortar and pestle
 	 * [ ] Implement way to craft mortar and pestle
 	 * [ ] Make coffee and tea plants spawn naturally

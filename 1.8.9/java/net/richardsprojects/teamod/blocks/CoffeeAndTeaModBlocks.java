@@ -10,19 +10,23 @@ import net.richardsprojects.teamod.References;
 public class CoffeeAndTeaModBlocks {
 
 	public static Block emptyCup;
+	public static Block coffeeBush;
 
 	public static void init() {
-		emptyCup = new BlockEmptyCup()
-				.setUnlocalizedName("emptyCup");
+		emptyCup = new BlockEmptyCup().setUnlocalizedName("emptyCup");
+		coffeeBush = new CoffeeBush().setUnlocalizedName("coffeeBush");
 	}
 
 	public static void register() {
-		GameRegistry.registerBlock(emptyCup, emptyCup
-				.getUnlocalizedName().substring(5));
+		GameRegistry.registerBlock(emptyCup, emptyCup.getUnlocalizedName()
+				.substring(5));
+		GameRegistry.registerBlock(coffeeBush, coffeeBush.getUnlocalizedName()
+				.substring(5));
 	}
 
 	public static void registerRenders() {
 		registerRender(emptyCup);
+		registerRender(coffeeBush);
 	}
 
 	public static void registerRender(Block block) {
