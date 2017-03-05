@@ -1,14 +1,14 @@
 {
     "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
     "textures": {
-        "0": "teamod:blocks/CoffeeStage5",
-        "particle": "teamod:blocks/CoffeeStage5"
+        "0": "teamod:blocks/TeaStage4_5",
+        "particle": "teamod:blocks/TeaStage4_5"
     },
     "elements": [
         {
             "name": "Cube",
-            "from": [ 2.5, 0.0, 2.5 ], 
-            "to": [ 13.5, 10.0, 13.5 ], 
+            "from": [ 3.5, 0.0, 3.5 ], 
+            "to": [ 12.5, 8.0, 12.5 ], 
             "faces": {
                 "north": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 13.0 ] },
                 "east": { "texture": "#0", "uv": [ 0.0, 0.0, 16.0, 13.0 ] },

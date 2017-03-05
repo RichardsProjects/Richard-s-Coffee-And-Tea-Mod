@@ -11,10 +11,12 @@ public class CoffeeAndTeaModBlocks {
 
 	public static Block emptyCup;
 	public static Block coffeeBush;
+	public static Block teaBush;
 
 	public static void init() {
 		emptyCup = new BlockEmptyCup().setUnlocalizedName("emptyCup");
-		coffeeBush = new CoffeeBush().setUnlocalizedName("coffeeBush");
+		coffeeBush = new BlockCoffeeBush().setUnlocalizedName("coffeeBush");
+		teaBush = new BlockTeaBush().setUnlocalizedName("teaBush");
 	}
 
 	public static void register() {
@@ -22,11 +24,14 @@ public class CoffeeAndTeaModBlocks {
 				.substring(5));
 		GameRegistry.registerBlock(coffeeBush, coffeeBush.getUnlocalizedName()
 				.substring(5));
+		GameRegistry.registerBlock(teaBush, teaBush.getUnlocalizedName()
+				.substring(5));
 	}
 
 	public static void registerRenders() {
 		registerRender(emptyCup);
 		registerRender(coffeeBush);
+		registerRender(teaBush);
 	}
 
 	public static void registerRender(Block block) {

@@ -1,8 +1,8 @@
 {
     "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
     "textures": {
-        "0": "teamod:blocks/CoffeeStage5",
-        "particle": "teamod:blocks/CoffeeStage5"
+        "0": "teamod:blocks/TeaStage4_5",
+        "particle": "teamod:blocks/TeaStage4_5"
     },
     "elements": [
         {
