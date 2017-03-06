@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.common.registry.VillagerRegistry;
 import net.richardsprojects.teamod.blocks.CoffeeAndTeaModBlocks;
 import net.richardsprojects.teamod.items.CoffeeAndTeaModItems;
@@ -36,10 +37,10 @@ public class CoffeeAndTeaMod {
 	 * [X] Add tea plant
 	 * [X] Make tea seeds and coffee beans plant their plants
 	 * [X] Add breaking texture for coffee and tea plants
-	 * [ ] Make the bounding box different for each state of plants 
+	 * [X] Make the bounding box different for each state of plants 
 	 * [ ] Add mortar and pestle
 	 * [ ] Implement way to craft mortar and pestle
-	 * [ ] Make coffee and tea plants spawn naturally
+	 * [X] Make coffee and tea plants spawn naturally
 	 * [ ] Make coffee and tea drinkable
 	 * [ ] Add coffee with sugar
 	 * [ ] Add coffee beans and tea seeds to Dungeon drop lists
@@ -77,6 +78,7 @@ public class CoffeeAndTeaMod {
 		proxy.registerRenders();
 		MinecraftForge.addGrassSeed(new ItemStack(CoffeeAndTeaModItems.teaSeed), 1);
 		MinecraftForge.addGrassSeed(new ItemStack(CoffeeAndTeaModItems.unroastedCoffeeBean), 1);
+		GameRegistry.registerWorldGenerator(new BushWorldGenerator(), 0);
 	}
 	
 	@EventHandler
