@@ -13,6 +13,7 @@ public class CoffeeAndTeaModItems {
 	public static Item teaSeed;
 	public static Item teaLeaves;
 	public static Item clayCup;
+	public static Item groundTeaLeaves;
 	
 	public static void init() {
 		unroastedCoffeeBean = new ItemUnroastedCoffeeBean();
@@ -20,6 +21,7 @@ public class CoffeeAndTeaModItems {
 		teaSeed = new ItemTeaSeed();
 		clayCup = new ItemClayCup();
 		teaLeaves = new ItemTeaLeaves();
+		groundTeaLeaves = new ItemGroundTeaLeaves();
 	}
 	
 	public static void register() {
@@ -33,13 +35,16 @@ public class CoffeeAndTeaModItems {
 				.substring(5));
 		GameRegistry.registerItem(clayCup, clayCup.getUnlocalizedName()
 				.substring(5));
+		GameRegistry.registerItem(groundTeaLeaves, groundTeaLeaves.getUnlocalizedName()
+				.substring(5));
 	}
 	
 	public static void registerRenders() {
 		registerRender(unroastedCoffeeBean);
 		registerRender(roastedCoffeeBean);
-		registerRender(teaSeed);
+		registerRender(groundTeaLeaves);
 		registerRender(teaLeaves);
+		registerRender(teaSeed);
 		registerRender(clayCup);
 	}
 	
@@ -54,5 +59,18 @@ public class CoffeeAndTeaModItems {
 						new ModelResourceLocation(References.MODID + ":"
 								+ item.getUnlocalizedName().substring(5),
 								"inventory"));
+	}
+	
+	public static void registerItemBlock(Item item) {
+		Minecraft
+		.getMinecraft()
+		.getRenderItem()
+		.getItemModelMesher()
+		.register(
+				item,
+				0,
+				new ModelResourceLocation(References.MODID + ":"
+						+ item.getUnlocalizedName().substring(5),
+						"inventory"));
 	}
 }

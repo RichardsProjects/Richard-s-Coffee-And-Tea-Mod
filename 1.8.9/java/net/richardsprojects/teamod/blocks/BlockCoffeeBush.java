@@ -39,7 +39,6 @@ public class BlockCoffeeBush extends BlockCrops implements IGrowable {
 		this.setTickRandomly(true);
 		float f = 0.5F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.25F, 0.5F + f);
-		this.setCreativeTab(CoffeeAndTeaMod.teaTab);
 		this.setHardness(0.0F);
 		this.setStepSound(soundTypeGrass);
 		this.disableStats();
