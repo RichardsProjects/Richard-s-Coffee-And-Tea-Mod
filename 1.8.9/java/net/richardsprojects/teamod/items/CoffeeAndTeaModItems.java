@@ -13,6 +13,8 @@ public class CoffeeAndTeaModItems {
 	public static Item teaSeed;
 	public static Item teaLeaves;
 	public static Item clayCup;
+	public static Item waterCup;
+	public static Item boilingCup;
 	public static Item groundTeaLeaves;
 	
 	public static void init() {
@@ -20,6 +22,8 @@ public class CoffeeAndTeaModItems {
 		roastedCoffeeBean = new ItemRoastedCoffeeBean();
 		teaSeed = new ItemTeaSeed();
 		clayCup = new ItemClayCup();
+		waterCup = new ItemWaterCup();
+		boilingCup = new ItemBoilingCup();
 		teaLeaves = new ItemTeaLeaves();
 		groundTeaLeaves = new ItemGroundTeaLeaves();
 	}
@@ -35,6 +39,10 @@ public class CoffeeAndTeaModItems {
 				.substring(5));
 		GameRegistry.registerItem(clayCup, clayCup.getUnlocalizedName()
 				.substring(5));
+		GameRegistry.registerItem(waterCup, waterCup.getUnlocalizedName()
+				.substring(5));
+		GameRegistry.registerItem(boilingCup, boilingCup.getUnlocalizedName()
+				.substring(5));
 		GameRegistry.registerItem(groundTeaLeaves, groundTeaLeaves.getUnlocalizedName()
 				.substring(5));
 	}
@@ -43,9 +51,11 @@ public class CoffeeAndTeaModItems {
 		registerRender(unroastedCoffeeBean);
 		registerRender(roastedCoffeeBean);
 		registerRender(groundTeaLeaves);
+		registerRender(boilingCup);
 		registerRender(teaLeaves);
 		registerRender(teaSeed);
 		registerRender(clayCup);
+		registerRender(waterCup);
 	}
 	
 	public static void registerRender(Item item) {

@@ -44,9 +44,9 @@ public class CoffeeAndTeaMod {
 	 * 		- [X] Implement recipe for mortar and pestle item
 	 * 		- [ ] Implement NBT saving so that the mortar and pestle will gradually ware out
 	 * 		- [X] Make it work and crush tea leaves
-	 * [ ] Implement way to craft mortar and pestle
+	 * [X] Implement way to craft mortar and pestle
 	 * [X] Make coffee and tea plants spawn naturally
-	 * [ ] Make it possible to fill an empty cup with water and then boil it in the furnace
+	 * [X] Make it possible to fill an empty cup with water and then boil it in the furnace
 	 * [ ] Make coffee and tea drinkable
 	 * [ ] Add coffee with sugar
 	 * [ ] Add coffee beans and tea seeds to Dungeon drop lists
