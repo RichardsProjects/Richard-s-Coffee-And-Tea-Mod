@@ -4,6 +4,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -30,8 +31,8 @@ public class CoffeeAndTeaMod {
 	 * [X] Implement clay cup and way to create empty cups
 	 * [X] Implement coffee beans and tea seeds
 	 * [X] Make seeds drop from tall grass
-	 * [ ] Create ItemBlock class for all the blocks to set max stack size
-	 *     and because it will be needed when I update to 1.8
+	 * [X] Create ItemBlock class for all the blocks to set max stack size
+	 *     and because it will be needed when I update to 1.9
 	 * [X] Implement facing direction on empty cup
 	 * [X] Add coffee plant
 	 * [X] Add tea plant
@@ -39,8 +40,8 @@ public class CoffeeAndTeaMod {
 	 * [X] Add breaking texture for coffee and tea plants
 	 * [X] Make the bounding box different for each state of plants 
 	 * [ ] Add mortar and pestle
-	 * 		- [ ] Fix bug where no picture shows for the mortar and pestle item
-	 * 		- [ ] Implement recipe for mortar and pestle item
+	 * 		- [X] Fix bug where no picture shows for the mortar and pestle item
+	 * 		- [X] Implement recipe for mortar and pestle item
 	 * 		- [ ] Implement NBT saving so that the mortar and pestle will gradually ware out
 	 * 		- [X] Make it work and crush tea leaves
 	 * [ ] Implement way to craft mortar and pestle
@@ -73,6 +74,8 @@ public class CoffeeAndTeaMod {
 	    ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(chest2);
 	
 		Recipes.register(); // add recipes
+		
+		MinecraftForge.EVENT_BUS.register(new FMLModEvents());
 		
     	// Register Event Handlers
     	//MinecraftForge.EVENT_BUS.register(new MCForgeModEvents());

@@ -3,16 +3,14 @@ package net.richardsprojects.teamod.itemblocks;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.richardsprojects.teamod.CoffeeAndTeaMod;
-import net.richardsprojects.teamod.blocks.CoffeeAndTeaModBlocks;
 
-public class ItemBlockMortarAndPestle extends ItemBlock {
+public class ItemBlockEmptyCup extends ItemBlock {
 
-	public ItemBlockMortarAndPestle(Block block) {
+	public ItemBlockEmptyCup(Block block) {
 		super(block);
 		this.maxStackSize = 1;
-		this.setUnlocalizedName("mortarAndPestle");
+		this.setUnlocalizedName("emptyCup");
 		this.setCreativeTab(CoffeeAndTeaMod.teaTab);
-		this.setMaxDamage(64);
 	}
 
 }

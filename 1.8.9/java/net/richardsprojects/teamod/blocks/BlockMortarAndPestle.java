@@ -30,8 +30,8 @@ public class BlockMortarAndPestle extends Block {
 		this.setBlockBounds(0.2F, 0.0F, 0.2F, 0.8F, 0.495F, 0.8F);
 		this.setCreativeTab(CoffeeAndTeaMod.teaTab);
 		this.setDefaultState(blockState.getBaseState().withProperty(DIRECTION, EnumFacing.NORTH));
-		this.setHardness(5.0F);
-		this.setHarvestLevel("pickaxe", 1);
+		this.setHardness(4.0F);
+		this.setHarvestLevel("pickaxe", 0);
 	}
 
 	@Override

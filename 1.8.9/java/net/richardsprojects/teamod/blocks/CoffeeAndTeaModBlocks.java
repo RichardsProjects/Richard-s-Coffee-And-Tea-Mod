@@ -6,6 +6,7 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.richardsprojects.teamod.References;
+import net.richardsprojects.teamod.itemblocks.ItemBlockEmptyCup;
 import net.richardsprojects.teamod.itemblocks.ItemBlockMortarAndPestle;
 
 public class CoffeeAndTeaModBlocks {
@@ -23,19 +24,25 @@ public class CoffeeAndTeaModBlocks {
 	}
 
 	public static void register() {
-		GameRegistry.registerBlock(emptyCup, emptyCup.getUnlocalizedName()
-				.substring(5));
+		// standard blocks		
 		GameRegistry.registerBlock(coffeeBush, coffeeBush.getUnlocalizedName()
 				.substring(5));
 		GameRegistry.registerBlock(teaBush, teaBush.getUnlocalizedName()
 				.substring(5));
+		
+		// item blocks
 		GameRegistry.registerBlock(mortarAndPestle, ItemBlockMortarAndPestle.class, "mortarAndPestle");
+		GameRegistry.registerBlock(emptyCup, ItemBlockEmptyCup.class, "emptyCup");
 	}
 
 	public static void registerRenders() {
-		registerRender(emptyCup);
+		// regular blocks
 		registerRender(coffeeBush);
 		registerRender(teaBush);
+		
+		// item blocks
+		registerRender(mortarAndPestle);
+		registerRender(emptyCup);
 	}
 
 	public static void registerRender(Block block) {

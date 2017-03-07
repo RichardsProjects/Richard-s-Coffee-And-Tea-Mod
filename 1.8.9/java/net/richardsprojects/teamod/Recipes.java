@@ -1,6 +1,7 @@
 package net.richardsprojects.teamod;
 
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.richardsprojects.teamod.blocks.CoffeeAndTeaModBlocks;
@@ -19,6 +20,12 @@ public class Recipes {
 		// smelt roasted coffee beans
 		GameRegistry.addSmelting(CoffeeAndTeaModItems.unroastedCoffeeBean,
 				new ItemStack(CoffeeAndTeaModItems.roastedCoffeeBean, 1), 0.0f);
+		
+		// ground tea leaves
+		Item mortarAndPestle = Item.getItemFromBlock(CoffeeAndTeaModBlocks.mortarAndPestle);
+        GameRegistry.addShapelessRecipe(new ItemStack(CoffeeAndTeaModItems.groundTeaLeaves),
+        		new ItemStack(CoffeeAndTeaModItems.teaLeaves), new ItemStack(mortarAndPestle,
+        		1, Short.MAX_VALUE));
 	}
 
 }
