@@ -8,7 +8,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.richardsprojects.teamod.References;
 import net.richardsprojects.teamod.itemblocks.ItemBlockEmptyCup;
 import net.richardsprojects.teamod.itemblocks.ItemBlockFullCoffeeCup;
+import net.richardsprojects.teamod.itemblocks.ItemBlockFullTeaCup;
 import net.richardsprojects.teamod.itemblocks.ItemBlockHalfCoffeeCup;
+import net.richardsprojects.teamod.itemblocks.ItemBlockHalfTeaCup;
 import net.richardsprojects.teamod.itemblocks.ItemBlockMortarAndPestle;
 
 public class CoffeeAndTeaModBlocks {
@@ -16,6 +18,8 @@ public class CoffeeAndTeaModBlocks {
 	public static Block emptyCup;
 	public static Block fullCoffeeCup;
 	public static Block halfCoffeeCup;
+	public static Block fullTeaCup;
+	public static Block halfTeaCup;
 	public static Block coffeeBush;
 	public static Block teaBush;
 	public static Block mortarAndPestle;
@@ -24,6 +28,8 @@ public class CoffeeAndTeaModBlocks {
 		emptyCup = new BlockEmptyCup().setUnlocalizedName("emptyCup");
 		fullCoffeeCup = new BlockFullCoffeeCup().setUnlocalizedName("fullCoffeeCup");
 		halfCoffeeCup = new BlockHalfCoffeeCup().setUnlocalizedName("halfCoffeeCup");
+		fullTeaCup = new BlockFullTeaCup().setUnlocalizedName("fullTeaCup");
+		halfTeaCup = new BlockHalfTeaCup().setUnlocalizedName("halfTeaCup");
 		coffeeBush = new BlockCoffeeBush().setUnlocalizedName("coffeeBush");
 		teaBush = new BlockTeaBush().setUnlocalizedName("teaBush");
 		mortarAndPestle = new BlockMortarAndPestle().setUnlocalizedName("mortarAndPestle");
@@ -41,6 +47,8 @@ public class CoffeeAndTeaModBlocks {
 		GameRegistry.registerBlock(emptyCup, ItemBlockEmptyCup.class, "emptyCup");
 		GameRegistry.registerBlock(fullCoffeeCup, ItemBlockFullCoffeeCup.class, "fullCoffeeCup");
 		GameRegistry.registerBlock(halfCoffeeCup, ItemBlockHalfCoffeeCup.class, "halfCoffeeCup");
+		GameRegistry.registerBlock(fullTeaCup, ItemBlockFullTeaCup.class, "fullTeaCup");
+		GameRegistry.registerBlock(halfTeaCup, ItemBlockHalfTeaCup.class, "halfTeaCup");
 	}
 
 	public static void registerRenders() {
@@ -53,6 +61,8 @@ public class CoffeeAndTeaModBlocks {
 		registerRender(emptyCup);
 		registerRender(fullCoffeeCup);
 		registerRender(halfCoffeeCup);
+		registerRender(fullTeaCup);
+		registerRender(halfTeaCup);
 	}
 
 	public static void registerRender(Block block) {

@@ -72,7 +72,7 @@ public class BlockHalfCoffeeCup extends Block {
 		if(!world.isRemote)
 		{
 			// add potion effect and update hunger
-			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 9600, 0));
+			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 4800, 0));
 			player.getFoodStats().addStats(4, 2.4F);
 			
 			// change the block to an empty coffee cup if they are not in creative

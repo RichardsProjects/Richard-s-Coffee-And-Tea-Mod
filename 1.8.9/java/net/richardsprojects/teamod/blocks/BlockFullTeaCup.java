@@ -16,11 +16,11 @@ import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.World;
 import net.richardsprojects.teamod.CoffeeAndTeaMod;
 
-public class BlockFullCoffeeCup extends Block {
+public class BlockFullTeaCup extends Block {
 
 	public static final IProperty<EnumFacing> DIRECTION = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL); 
 	
-	public BlockFullCoffeeCup() {
+	public BlockFullTeaCup() {
 		super(Material.wood);
 		this.setBlockBounds(0.2F, 0.0F, 0.2F, 0.8F, 0.495F, 0.8F);
 		this.setCreativeTab(CoffeeAndTeaMod.teaTab);
@@ -71,13 +71,13 @@ public class BlockFullCoffeeCup extends Block {
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumFacing side, float hitX, float hitY, float hitZ) {
 		if(!world.isRemote) {
 			// add potion effect and update hunger
-			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 4800, 0));
+			player.addPotionEffect(new PotionEffect(Potion.regeneration.getId(), 2400, 0));
 			player.getFoodStats().addStats(4, 2.4F);
 			
 			// change the block to a half coffee cup if they are not in creative
 	    	if(!player.capabilities.isCreativeMode) {
 	    		int meta = this.getMetaFromState(world.getBlockState(pos));
-				world.setBlockState(pos, CoffeeAndTeaModBlocks.halfCoffeeCup.getStateFromMeta(meta));
+				world.setBlockState(pos, CoffeeAndTeaModBlocks.halfTeaCup.getStateFromMeta(meta));
 	    	}
 		}
 		

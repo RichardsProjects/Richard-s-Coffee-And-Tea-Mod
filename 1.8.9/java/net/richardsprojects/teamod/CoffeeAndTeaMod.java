@@ -48,9 +48,9 @@ public class CoffeeAndTeaMod {
 	 * [X] Make coffee and tea plants spawn naturally
 	 * [X] Make it possible to fill an empty cup with water and then boil it in the furnace
 	 * [X] Make coffee drinkable
-	 * [ ] Make tea drinkable
+	 * [X] Make tea drinkable
 	 * [ ] Add coffee with sugar
-	 * [ ] Add tea
+	 * [X] Add tea
 	 * [X] Add coffee grounds
 	 * [ ] Add coffee beans and tea seeds to Dungeon drop lists
 	 * [ ] Add trades with villagers like 1.7 version has
