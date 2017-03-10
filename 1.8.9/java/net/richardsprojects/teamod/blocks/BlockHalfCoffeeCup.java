@@ -7,31 +7,24 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemPickaxe;
-import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import net.richardsprojects.teamod.CoffeeAndTeaMod;
-import net.richardsprojects.teamod.items.CoffeeAndTeaModItems;
 
-public class BlockMortarAndPestle extends Block {
+public class BlockHalfCoffeeCup extends Block {
 
 	public static final IProperty<EnumFacing> DIRECTION = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL); 
 	
-	public BlockMortarAndPestle() {
-		super(Material.rock);
+	public BlockHalfCoffeeCup() {
+		super(Material.wood);
 		this.setBlockBounds(0.2F, 0.0F, 0.2F, 0.8F, 0.495F, 0.8F);
 		this.setCreativeTab(CoffeeAndTeaMod.teaTab);
 		this.setDefaultState(blockState.getBaseState().withProperty(DIRECTION, EnumFacing.NORTH));
-		this.setHardness(4.0F);
-		this.setHarvestLevel("pickaxe", 0);
 	}
 
 	@Override
@@ -56,12 +49,10 @@ public class BlockMortarAndPestle extends Block {
     }
 
 	@Override
-    public IBlockState getStateFromMeta(int meta)
-    {
+    public IBlockState getStateFromMeta(int meta) {
         EnumFacing enumfacing = EnumFacing.getFront(meta);
 
-        if (enumfacing.getAxis() == EnumFacing.Axis.Y)
-        {
+        if (enumfacing.getAxis() == EnumFacing.Axis.Y) {
             enumfacing = EnumFacing.NORTH;
         }
 
@@ -72,51 +63,25 @@ public class BlockMortarAndPestle extends Block {
 	/**
 	 * Called when a player places the block and is what is used to set direction
 	 */
-    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-    {
+    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
         return this.getDefaultState().withProperty(DIRECTION, placer.getHorizontalFacing().getOpposite());
     }
 	
 	@Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumFacing side, float hitX, float hitY, float hitZ) {
-		ItemStack itemInUse = player.inventory.getCurrentItem();
-		
-		
-		if (itemInUse != null && itemInUse.getItem() == CoffeeAndTeaModItems.teaLeaves) {
-			if (world.isRemote) {
-				world.playAuxSFX(1020, pos, 0);
-			}
+		if(!world.isRemote)
+		{
+			// add potion effect and update hunger
+			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 9600, 0));
+			player.getFoodStats().addStats(4, 2.4F);
 			
-			if (!world.isRemote) {
-				if (itemInUse.stackSize > 1) {
-					itemInUse.stackSize--;
-				} else {
-					player.inventory.setInventorySlotContents(player.inventory.currentItem, null);
-				}
-				EntityItem item = new EntityItem(player.worldObj, pos.getX(), pos.getY() + 1, pos.getZ(), 
-						new ItemStack(CoffeeAndTeaModItems.groundTeaLeaves, 1));
-				world.spawnEntityInWorld(item);
-			}
-		}
-		
-		if (itemInUse != null && itemInUse.getItem() == CoffeeAndTeaModItems.roastedCoffeeBean) {
-			if (world.isRemote) {
-				world.playAuxSFX(1020, pos, 0);
-			}
-			
-			if (!world.isRemote) {
-				if (itemInUse.stackSize > 1) {
-					itemInUse.stackSize--;
-				} else {
-					player.inventory.setInventorySlotContents(player.inventory.currentItem, null);
-				}
-				EntityItem item = new EntityItem(player.worldObj, pos.getX(), pos.getY() + 1, pos.getZ(), 
-						new ItemStack(CoffeeAndTeaModItems.coffeeGrounds, 1));
-				world.spawnEntityInWorld(item);
-			}
+			// change the block to an empty coffee cup if they are not in creative
+	    	if(!player.capabilities.isCreativeMode) {
+	    		int meta = this.getMetaFromState(world.getBlockState(pos));
+				world.setBlockState(pos, CoffeeAndTeaModBlocks.emptyCup.getStateFromMeta(meta));
+	    	}
 		}
 		
 		return true;
-    }
-
+	}
 }

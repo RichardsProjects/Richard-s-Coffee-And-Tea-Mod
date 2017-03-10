@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "teamod:halfCoffeeCup" },
+        "facing=south": { "model": "teamod:halfCoffeeCup", "y": 180 },
+        "facing=west":  { "model": "teamod:halfCoffeeCup", "y": 270 },
+        "facing=east":  { "model": "teamod:halfCoffeeCup", "y": 90 }
+    }
+}

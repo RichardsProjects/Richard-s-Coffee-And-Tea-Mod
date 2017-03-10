@@ -8,6 +8,9 @@ item.waterCup.name=Cup of Water
 item.teaLeaves.name=Tea Leaves
 item.groundTeaLeaves.name=Ground Tea Leaves
 item.boilingCup.name=Boiling Cup of Water
+item.coffeeGrounds.name=Coffee Grounds
 
 tile.emptyCup.name=Empty Cup
 tile.mortarAndPestle.name=Mortar and Pestle
+tile.fullCoffeeCup.name=Full Cup of Coffee
+tile.halfCoffeeCup.name=Half Cup of Coffee

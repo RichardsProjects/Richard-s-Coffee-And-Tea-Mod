@@ -47,8 +47,11 @@ public class CoffeeAndTeaMod {
 	 * [X] Implement way to craft mortar and pestle
 	 * [X] Make coffee and tea plants spawn naturally
 	 * [X] Make it possible to fill an empty cup with water and then boil it in the furnace
-	 * [ ] Make coffee and tea drinkable
+	 * [X] Make coffee drinkable
+	 * [ ] Make tea drinkable
 	 * [ ] Add coffee with sugar
+	 * [ ] Add tea
+	 * [X] Add coffee grounds
 	 * [ ] Add coffee beans and tea seeds to Dungeon drop lists
 	 * [ ] Add trades with villagers like 1.7 version has
 	 * 		- Use this link for reference: https://gist.github.com/Thutmose/1b11be61a4d340fa45ae

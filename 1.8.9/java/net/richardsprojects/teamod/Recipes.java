@@ -33,9 +33,19 @@ public class Recipes {
         		new ItemStack(CoffeeAndTeaModItems.teaLeaves), new ItemStack(mortarAndPestle,
         		1, Short.MAX_VALUE));
         
+        // coffee grounds
+        GameRegistry.addShapelessRecipe(new ItemStack(CoffeeAndTeaModItems.coffeeGrounds),
+        		new ItemStack(CoffeeAndTeaModItems.roastedCoffeeBean), new ItemStack(mortarAndPestle,
+        		1, Short.MAX_VALUE));
+        
         // mortar and pestle recipe
         GameRegistry.addRecipe(new ItemStack(mortarAndPestle), "  x", "yxy", " y ",
     			'x', new ItemStack(Items.iron_ingot, 1), 'y', new ItemStack(Blocks.stone, 1));
+        
+        // full coffee cup
+        GameRegistry.addRecipe(new ItemStack(CoffeeAndTeaModBlocks.fullCoffeeCup), "yyy", "yxy", 
+        		"yyy", 'x', new ItemStack(CoffeeAndTeaModItems.boilingCup, 1), 'y', 
+    			new ItemStack(CoffeeAndTeaModItems.coffeeGrounds, 1));
 	}
 
 }
