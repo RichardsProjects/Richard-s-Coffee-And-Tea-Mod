@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.registry.VillagerRegistry;
 import net.richardsprojects.teamod.blocks.CoffeeAndTeaModBlocks;
 import net.richardsprojects.teamod.items.CoffeeAndTeaModItems;
 import net.richardsprojects.teamod.proxy.CommonProxy;
+import net.richardsprojects.teamod.tileentity.CoffeeAndTeaModTileEntities;
 
 @Mod(modid = References.MODID, name = References.MOD_NAME, version = References.VERSION)
 public class CoffeeAndTeaMod {
@@ -26,36 +27,13 @@ public class CoffeeAndTeaMod {
 	public static final CoffeeAndTeaTab teaTab = new CoffeeAndTeaTab();
 	
 	/*
-	 * ToDo List:
-	 * [X] Implement empty cup
-	 * [X] Implement clay cup and way to create empty cups
-	 * [X] Implement coffee beans and tea seeds
-	 * [X] Make seeds drop from tall grass
-	 * [X] Create ItemBlock class for all the blocks to set max stack size
-	 *     and because it will be needed when I update to 1.9
-	 * [X] Implement facing direction on empty cup
-	 * [X] Add coffee plant
-	 * [X] Add tea plant
-	 * [X] Make tea seeds and coffee beans plant their plants
-	 * [X] Add breaking texture for coffee and tea plants
-	 * [X] Make the bounding box different for each state of plants 
-	 * [ ] Add mortar and pestle
-	 * 		- [X] Fix bug where no picture shows for the mortar and pestle item
-	 * 		- [X] Implement recipe for mortar and pestle item
-	 * 		- [ ] Implement NBT saving so that the mortar and pestle will gradually ware out
-	 * 		- [X] Make it work and crush tea leaves
-	 * [X] Implement way to craft mortar and pestle
-	 * [X] Make coffee and tea plants spawn naturally
-	 * [X] Make it possible to fill an empty cup with water and then boil it in the furnace
-	 * [X] Make coffee drinkable
-	 * [X] Make tea drinkable
-	 * [ ] Add coffee with sugar
-	 * [X] Add tea
-	 * [X] Add coffee grounds
-	 * [ ] Add coffee beans and tea seeds to Dungeon drop lists
-	 * [ ] Add trades with villagers like 1.7 version has
+	 * Future updates:
+	 * [ ] Make coffee and tea bushes solid
+	 * [ ] Add a drink sound when you drink from a coffee or tea cup
+	 * [ ] Add the anvil break sound when a mortar and pestle breaks
+	 * [ ] Add different textures for damage to the mortar and pestle like the anvil 
+	 * [ ] Add trades with villagers in 1.8:
 	 * 		- Use this link for reference: https://gist.github.com/Thutmose/1b11be61a4d340fa45ae
-	 * [X] Add mineshafts loot like 1.7 version
 	 */
 	
 	@EventHandler
@@ -65,6 +43,7 @@ public class CoffeeAndTeaMod {
 		CoffeeAndTeaModBlocks.register();
 		CoffeeAndTeaModItems.init();
 		CoffeeAndTeaModItems.register();
+		CoffeeAndTeaModTileEntities.register();
 		
 	    // add loot to chests in mineshafts
 	    ItemStack coffeeSeed = new ItemStack(CoffeeAndTeaModItems.unroastedCoffeeBean);
@@ -76,12 +55,19 @@ public class CoffeeAndTeaMod {
 	    chest2 = new WeightedRandomChestContent(teaSeeds, 2, 5, 065);
 	    ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(chest2);
 	
+	    // add loot to chests in dungeons
+    	WeightedRandomChestContent chestContent1;
+    	ItemStack coffee = new ItemStack(CoffeeAndTeaModItems.roastedCoffeeBean);
+    	chestContent1 = new WeightedRandomChestContent(coffee, 5, 24, 065);
+	    ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(chestContent1);
+    	WeightedRandomChestContent chestContent2;
+    	ItemStack teaLeaves = new ItemStack(CoffeeAndTeaModItems.teaLeaves);
+    	chestContent2 = new WeightedRandomChestContent(teaLeaves, 5, 24, 065);
+	    ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(chestContent2);
+	    
 		Recipes.register(); // add recipes
 		
-		MinecraftForge.EVENT_BUS.register(new FMLModEvents());
-		
-    	// Register Event Handlers
-    	//MinecraftForge.EVENT_BUS.register(new MCForgeModEvents());
+		MinecraftForge.EVENT_BUS.register(new ModEvents());
 	}
 	
 	@EventHandler

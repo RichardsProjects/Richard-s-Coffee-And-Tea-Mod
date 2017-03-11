@@ -1,13 +1,15 @@
 package net.richardsprojects.teamod;
 
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 import net.richardsprojects.teamod.blocks.CoffeeAndTeaModBlocks;
 
-public class FMLModEvents {
+public class ModEvents {
 
 	@SubscribeEvent
 	public void onCrafting(ItemCraftedEvent e) 
@@ -35,6 +37,19 @@ public class FMLModEvents {
 	            }
 	        }
 	    }
+	}
+	
+	@SubscribeEvent
+	public void entityJoin(EntityJoinWorldEvent event)
+	{
+		// check to make sure that the entity is a player
+		if(event.entity instanceof EntityPlayer && event.entity.worldObj.isRemote)
+		{
+			EntityPlayer player = (EntityPlayer) event.entity;
+			ThreadCheckForUpdates checkForUpdates = new ThreadCheckForUpdates(player);
+			checkForUpdates.run();
+			
+		}
 	}
 	
 }

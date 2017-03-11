@@ -14,5 +14,7 @@ tile.emptyCup.name=Empty Cup
 tile.mortarAndPestle.name=Mortar and Pestle
 tile.fullCoffeeCup.name=Full Cup of Coffee
 tile.halfCoffeeCup.name=Half Cup of Coffee
+tile.fullCoffeeSugarCup.name=Full Cup of Coffee with Sugar
+tile.halfCoffeeSugarCup.name=Half Cup of Coffee with Sugar
 tile.halfTeaCup.name=Half Cup of Tea
 tile.fullTeaCup.name=Full Cup of Tea

@@ -38,6 +38,11 @@ public class BlockFullTeaCup extends Block {
 	}
 	
 	@Override
+	public boolean isFullCube() {
+		return false;
+	}
+	
+	@Override
 	public BlockState createBlockState() {
 		return new BlockState(this, DIRECTION);
 	}

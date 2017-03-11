@@ -8,8 +8,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.richardsprojects.teamod.References;
 import net.richardsprojects.teamod.itemblocks.ItemBlockEmptyCup;
 import net.richardsprojects.teamod.itemblocks.ItemBlockFullCoffeeCup;
+import net.richardsprojects.teamod.itemblocks.ItemBlockFullCoffeeSugarCup;
 import net.richardsprojects.teamod.itemblocks.ItemBlockFullTeaCup;
 import net.richardsprojects.teamod.itemblocks.ItemBlockHalfCoffeeCup;
+import net.richardsprojects.teamod.itemblocks.ItemBlockHalfCoffeeSugarCup;
 import net.richardsprojects.teamod.itemblocks.ItemBlockHalfTeaCup;
 import net.richardsprojects.teamod.itemblocks.ItemBlockMortarAndPestle;
 
@@ -18,6 +20,8 @@ public class CoffeeAndTeaModBlocks {
 	public static Block emptyCup;
 	public static Block fullCoffeeCup;
 	public static Block halfCoffeeCup;
+	public static Block fullCoffeeSugarCup;
+	public static Block halfCoffeeSugarCup;
 	public static Block fullTeaCup;
 	public static Block halfTeaCup;
 	public static Block coffeeBush;
@@ -28,6 +32,8 @@ public class CoffeeAndTeaModBlocks {
 		emptyCup = new BlockEmptyCup().setUnlocalizedName("emptyCup");
 		fullCoffeeCup = new BlockFullCoffeeCup().setUnlocalizedName("fullCoffeeCup");
 		halfCoffeeCup = new BlockHalfCoffeeCup().setUnlocalizedName("halfCoffeeCup");
+		fullCoffeeSugarCup = new BlockFullCoffeeSugarCup().setUnlocalizedName("fullCoffeeSugarCup");
+		halfCoffeeSugarCup = new BlockHalfCoffeeSugarCup().setUnlocalizedName("halfCoffeeSugarCup");
 		fullTeaCup = new BlockFullTeaCup().setUnlocalizedName("fullTeaCup");
 		halfTeaCup = new BlockHalfTeaCup().setUnlocalizedName("halfTeaCup");
 		coffeeBush = new BlockCoffeeBush().setUnlocalizedName("coffeeBush");
@@ -47,6 +53,8 @@ public class CoffeeAndTeaModBlocks {
 		GameRegistry.registerBlock(emptyCup, ItemBlockEmptyCup.class, "emptyCup");
 		GameRegistry.registerBlock(fullCoffeeCup, ItemBlockFullCoffeeCup.class, "fullCoffeeCup");
 		GameRegistry.registerBlock(halfCoffeeCup, ItemBlockHalfCoffeeCup.class, "halfCoffeeCup");
+		GameRegistry.registerBlock(fullCoffeeSugarCup, ItemBlockFullCoffeeSugarCup.class, "fullCoffeeSugarCup");
+		GameRegistry.registerBlock(halfCoffeeSugarCup, ItemBlockHalfCoffeeSugarCup.class, "halfCoffeeSugarCup");
 		GameRegistry.registerBlock(fullTeaCup, ItemBlockFullTeaCup.class, "fullTeaCup");
 		GameRegistry.registerBlock(halfTeaCup, ItemBlockHalfTeaCup.class, "halfTeaCup");
 	}
@@ -61,6 +69,8 @@ public class CoffeeAndTeaModBlocks {
 		registerRender(emptyCup);
 		registerRender(fullCoffeeCup);
 		registerRender(halfCoffeeCup);
+		registerRender(fullCoffeeSugarCup);
+		registerRender(halfCoffeeSugarCup);
 		registerRender(fullTeaCup);
 		registerRender(halfTeaCup);
 	}

@@ -33,6 +33,11 @@ public class BlockHalfTeaCup extends Block {
 	}
 	
 	@Override
+	public boolean isFullCube() {
+		return false;
+	}
+	
+	@Override
 	public EnumWorldBlockLayer getBlockLayer() {
 		return EnumWorldBlockLayer.CUTOUT;
 	}

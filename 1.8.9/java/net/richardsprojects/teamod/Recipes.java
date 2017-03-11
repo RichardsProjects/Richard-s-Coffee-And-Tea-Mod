@@ -47,6 +47,11 @@ public class Recipes {
         		"yyy", 'x', new ItemStack(CoffeeAndTeaModItems.boilingCup, 1), 'y', 
     			new ItemStack(CoffeeAndTeaModItems.coffeeGrounds, 1));
         
+        // full coffee cup with sugar
+        GameRegistry.addRecipe(new ItemStack(CoffeeAndTeaModBlocks.fullCoffeeSugarCup), "yyy", "yxy", 
+        		"yyy", 'x', new ItemStack(CoffeeAndTeaModBlocks.fullCoffeeCup, 1), 'y', 
+    			new ItemStack(Items.sugar, 1));
+        
         // full tea cup
         GameRegistry.addRecipe(new ItemStack(CoffeeAndTeaModBlocks.fullTeaCup), "yyy", "yxy", 
         		"yyy", 'x', new ItemStack(CoffeeAndTeaModItems.boilingCup, 1), 'y', 
