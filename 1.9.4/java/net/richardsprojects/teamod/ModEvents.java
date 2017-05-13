@@ -4,6 +4,14 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.storage.loot.LootEntry;
+import net.minecraft.world.storage.loot.LootEntryTable;
+import net.minecraft.world.storage.loot.LootPool;
+import net.minecraft.world.storage.loot.RandomValueRange;
+import net.minecraft.world.storage.loot.conditions.LootCondition;
+import net.minecraft.world.storage.loot.conditions.LootConditionManager;
+import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
@@ -40,16 +48,29 @@ public class ModEvents {
 	}
 	
 	@SubscribeEvent
-	public void entityJoin(EntityJoinWorldEvent event)
+	public void entityJoin(EntityJoinWorldEvent e)
 	{
 		// check to make sure that the entity is a player
-		if(event.getEntity() instanceof EntityPlayer && event.getEntity().worldObj.isRemote)
+		if(e.getEntity() instanceof EntityPlayer && e.getEntity().worldObj.isRemote)
 		{
-			EntityPlayer player = (EntityPlayer) event.getEntity();
+			EntityPlayer player = (EntityPlayer) e.getEntity();
 			ThreadCheckForUpdates checkForUpdates = new ThreadCheckForUpdates(player);
 			checkForUpdates.run();
 			
 		}
 	}
 	
+	@SubscribeEvent
+	public void lootLoad(LootTableLoadEvent e) {
+		if (e.getName().toString().equals("minecraft:chests/simple_dungeon")) {
+			// add custom pool for the Coffee and Tea Mod
+			LootEntry entry = new LootEntryTable(new ResourceLocation("teamod:inject/simple_dungeon"), 1, 0, new LootCondition[0], "ModDungeonChest1");
+			LootPool pool = new LootPool(new LootEntry[] {entry}, new LootCondition[0], new RandomValueRange(1, 3), new RandomValueRange(0, 0), "CoffeeAndTeaMod");
+			e.getTable().addPool(pool);
+		} else if (e.getName().toString().equals("minecraft:chests/abandoned_mineshaft")) {
+			LootEntry entry = new LootEntryTable(new ResourceLocation("teamod:inject/abandoned_mineshaft"), 1, 0, new LootCondition[0], "ModMineshaft1");
+			LootPool pool = new LootPool(new LootEntry[] {entry}, new LootCondition[0], new RandomValueRange(1, 3), new RandomValueRange(0, 0), "CoffeeAndTeaMod");
+			e.getTable().addPool(pool);
+		}
+	}
 }

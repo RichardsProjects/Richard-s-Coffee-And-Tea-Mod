@@ -42,28 +42,6 @@ public class CoffeeAndTeaMod {
 		CoffeeAndTeaModItems.init();
 		CoffeeAndTeaModItems.register();
 		CoffeeAndTeaModTileEntities.register();
-		
-		// TODO: New system for adding loot to mineshafts
-		
-	    // add loot to chests in mineshafts
-	    /*ItemStack coffeeSeed = new ItemStack(CoffeeAndTeaModItems.unroastedCoffeeBean);
-	    WeightedRandomChestContent chest1;
-	    chest1 = new WeightedRandomChestContent(coffeeSeed, 2, 5, 065);
-	    ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(chest1);
-	    WeightedRandomChestContent chest2;
-	    ItemStack teaSeeds = new ItemStack(CoffeeAndTeaModItems.teaSeed);
-	    chest2 = new WeightedRandomChestContent(teaSeeds, 2, 5, 065);
-	    ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(chest2);
-	
-	    // add loot to chests in dungeons
-    	WeightedRandomChestContent chestContent1;
-    	ItemStack coffee = new ItemStack(CoffeeAndTeaModItems.roastedCoffeeBean);
-    	chestContent1 = new WeightedRandomChestContent(coffee, 5, 24, 065);
-	    ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(chestContent1);
-    	WeightedRandomChestContent chestContent2;
-    	ItemStack teaLeaves = new ItemStack(CoffeeAndTeaModItems.teaLeaves);
-    	chestContent2 = new WeightedRandomChestContent(teaLeaves, 5, 24, 065);
-	    ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(chestContent2);*/
 	    
 		Recipes.register(); // add recipes
 		
