@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "teamod:fullCoffeeCup" },
+        "facing=south": { "model": "teamod:fullCoffeeCup", "y": 180 },
+        "facing=west":  { "model": "teamod:fullCoffeeCup", "y": 270 },
+        "facing=east":  { "model": "teamod:fullCoffeeCup", "y": 90 }
+    }
+}
