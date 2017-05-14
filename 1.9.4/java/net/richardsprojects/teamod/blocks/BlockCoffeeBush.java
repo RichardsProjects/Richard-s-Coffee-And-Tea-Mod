@@ -3,6 +3,8 @@ package net.richardsprojects.teamod.blocks;
 import java.util.List;
 import java.util.Random;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.IGrowable;
@@ -57,51 +59,30 @@ public class BlockCoffeeBush extends BlockCrops implements IGrowable {
         return false;
     }
 	
-	// TODO: Need to override a different method for 1.9
-	/*
 	@Override
-	public void addCollisionBoxesToList(World worldIn, BlockPos pos, IBlockState state, 
-			AxisAlignedBB mask, List<AxisAlignedBB> list, Entity collidingEntity) {
+	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, 
+			List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn) {
 		if (state.getValue(AGE).intValue() == 0) {
-    		this.setBlockBounds((float) BB_0.minX, (float) BB_0.minY, (float) BB_0.minZ, 
-    				(float) BB_0.maxX, (float) BB_0.maxY, (float) BB_0.maxZ);
-    		super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
+			super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BB_0);
     	} else if (state.getValue(AGE).intValue() == 1) {
-    		this.setBlockBounds((float) BB_1.minX, (float) BB_1.minY, (float) BB_1.minZ, 
-    				(float) BB_1.maxX, (float) BB_1.maxY, (float) BB_1.maxZ);
-    		super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
+    		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BB_1);
     	} else if (state.getValue(AGE).intValue() == 2) {
-    		this.setBlockBounds((float) BB_2.minX, (float) BB_2.minY, (float) BB_2.minZ, 
-    				(float) BB_2.maxX, (float) BB_2.maxY, (float) BB_2.maxZ);
-    		super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
+    		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BB_2);
     	} else if (state.getValue(AGE).intValue() == 3) {
-    		this.setBlockBounds((float) BB_3.minX, (float) BB_3.minY, (float) BB_3.minZ, 
-    				(float) BB_3.maxX, (float) BB_3.maxY, (float) BB_3.maxZ);
-    		super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
+    		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BB_3);
     	} else if (state.getValue(AGE).intValue() == 4) {
-    		this.setBlockBounds((float) BB_4.minX, (float) BB_4.minY, (float) BB_4.minZ, 
-    				(float) BB_4.maxX, (float) BB_4.maxY, (float) BB_4.maxZ);
-    		super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
+    		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BB_4);
     	} else if (state.getValue(AGE).intValue() == 5) {
-    		this.setBlockBounds((float) BB_5.minX, (float) BB_5.minY, (float) BB_5.minZ, 
-    				(float) BB_5.maxX, (float) BB_5.maxY, (float) BB_5.maxZ);
-    		super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
+    		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BB_5);
     	} else if (state.getValue(AGE).intValue() == 6) {
-    		this.setBlockBounds((float) BB_6.minX, (float) BB_6.minY, (float) BB_6.minZ, 
-    				(float) BB_6.maxX, (float) BB_6.maxY, (float) BB_6.maxZ);
-    		super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
+    		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BB_6);
     	} else {
-    		this.setBlockBounds((float) BB_7.minX, (float) BB_7.minY, (float) BB_7.minZ, 
-    				(float) BB_7.maxX, (float) BB_7.maxY, (float) BB_7.maxZ);
-    		super.addCollisionBoxesToList(worldIn, pos, state, mask, list, collidingEntity);
+    		super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BB_7);
     	}
-    }*/
+    }
 	
-	// TODO: Need to override a different method for 1.9
-	/*
 	@Override
-    public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state)
-    {
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
     	if (state.getValue(AGE).intValue() == 0)
     		return BB_0;
     	else if (state.getValue(AGE).intValue() == 1) 
@@ -118,39 +99,5 @@ public class BlockCoffeeBush extends BlockCrops implements IGrowable {
     		return BB_6;
     	else 										  
     		return BB_7;
-    }*/
-    
-	// TODO: Need to override a different method for 1.9
-	/*
-    @Override
-    public void setBlockBoundsBasedOnState(IBlockAccess worldIn, BlockPos pos)
-    {
-    	IBlockState state = worldIn.getBlockState(pos);
-    	
-    	if (state.getValue(AGE).intValue() == 0) {
-    		this.setBlockBounds((float) BB_0.minX, (float) BB_0.minY, (float) BB_0.minZ, 
-    				(float) BB_0.maxX, (float) BB_0.maxY, (float) BB_0.maxZ);
-    	} else if (state.getValue(AGE).intValue() == 1) {
-    		this.setBlockBounds((float) BB_1.minX, (float) BB_1.minY, (float) BB_1.minZ, 
-    				(float) BB_1.maxX, (float) BB_1.maxY, (float) BB_1.maxZ);
-    	} else if (state.getValue(AGE).intValue() == 2) {
-    		this.setBlockBounds((float) BB_2.minX, (float) BB_2.minY, (float) BB_2.minZ, 
-    				(float) BB_2.maxX, (float) BB_2.maxY, (float) BB_2.maxZ);
-    	} else if (state.getValue(AGE).intValue() == 3) {
-    		this.setBlockBounds((float) BB_3.minX, (float) BB_3.minY, (float) BB_3.minZ, 
-    				(float) BB_3.maxX, (float) BB_3.maxY, (float) BB_3.maxZ);
-    	} else if (state.getValue(AGE).intValue() == 4) {
-    		this.setBlockBounds((float) BB_4.minX, (float) BB_4.minY, (float) BB_4.minZ, 
-    				(float) BB_4.maxX, (float) BB_4.maxY, (float) BB_4.maxZ);
-    	} else if (state.getValue(AGE).intValue() == 5) {
-    		this.setBlockBounds((float) BB_5.minX, (float) BB_5.minY, (float) BB_5.minZ, 
-    				(float) BB_5.maxX, (float) BB_5.maxY, (float) BB_5.maxZ);
-    	} else if (state.getValue(AGE).intValue() == 6) {
-    		this.setBlockBounds((float) BB_6.minX, (float) BB_6.minY, (float) BB_6.minZ, 
-    				(float) BB_6.maxX, (float) BB_6.maxY, (float) BB_6.maxZ);
-    	} else {
-    		this.setBlockBounds((float) BB_7.minX, (float) BB_7.minY, (float) BB_7.minZ, 
-    				(float) BB_7.maxX, (float) BB_7.maxY, (float) BB_7.maxZ);
-    	}
-    }*/
+    }
 }

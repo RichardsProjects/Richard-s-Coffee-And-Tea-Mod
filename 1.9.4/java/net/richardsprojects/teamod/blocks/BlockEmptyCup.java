@@ -1,17 +1,23 @@
 package net.richardsprojects.teamod.blocks;
 
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -21,9 +27,10 @@ public class BlockEmptyCup extends Block {
 
 	public static final IProperty<EnumFacing> DIRECTION = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL); 
 	
+	private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB(0.2F, 0.0F, 0.2F, 0.8F, 0.495F, 0.8F);
+	
 	public BlockEmptyCup() {
 		super(Material.WOOD);
-		//this.setBlockBounds(0.2F, 0.0F, 0.2F, 0.8F, 0.495F, 0.8F); // TODO: Block bounds
 		this.setCreativeTab(CoffeeAndTeaMod.teaTab);
 		this.setDefaultState(blockState.getBaseState().withProperty(DIRECTION, EnumFacing.NORTH));
 	}
@@ -74,5 +81,16 @@ public class BlockEmptyCup extends Block {
     public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
     {
         return this.getDefaultState().withProperty(DIRECTION, placer.getHorizontalFacing().getOpposite());
+    }
+	
+	@Override
+	public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, 
+			List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn) {
+			super.addCollisionBoxToList(pos, entityBox, collidingBoxes, BOUNDING_BOX);
+    }
+	
+	@Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+    	return BOUNDING_BOX;
     }
 }

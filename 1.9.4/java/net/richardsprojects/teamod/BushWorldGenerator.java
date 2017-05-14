@@ -23,16 +23,13 @@ import net.richardsprojects.teamod.blocks.CoffeeAndTeaModBlocks;
 
 public class BushWorldGenerator implements IWorldGenerator {
 
-	private void generateEnd(World world, Random random, int i, int j) {}
-	
-	private void generateNether(World world, Random random, int i, int j) {}
 
 	private void generateSurface(World world, Random random, int chunkX, int chunkZ) {
 	
 		 // check the Biome
 		 Chunk chunk = world.getChunkFromChunkCoords(chunkX, chunkZ);
 		 Biome b = world.getBiomeGenForCoords(new BlockPos(chunk.xPosition, chunk.zPosition, 60));
-         if(b.equals("Plains") || b.getBiomeName().equals("Extreme Hills"))
+         if(b.getBiomeName().equals("Plains") || b.getBiomeName().equals("Extreme Hills"))
          {
         	 int addBush = random.nextInt(3);
         	 if(addBush == 0) {
@@ -61,12 +58,8 @@ public class BushWorldGenerator implements IWorldGenerator {
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world,
 			IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-		if (world.provider.getDimensionType() == DimensionType.NETHER) {
-		    generateNether(world, random, chunkX * 16, chunkZ * 16);
-		} else if (world.provider.getDimensionType() == DimensionType.OVERWORLD) {
+		if (world.provider.getDimensionType() == DimensionType.OVERWORLD) {
 		    generateSurface(world, random, chunkX * 16, chunkZ * 16);
-		} else if (world.provider.getDimensionType() == DimensionType.THE_END) {
-		    generateEnd(world, random, chunkX * 16, chunkZ * 16);
 		}
 	}
 }	

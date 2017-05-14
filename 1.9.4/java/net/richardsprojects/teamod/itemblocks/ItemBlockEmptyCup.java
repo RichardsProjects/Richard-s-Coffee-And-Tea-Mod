@@ -34,10 +34,12 @@ public class ItemBlockEmptyCup extends ItemBlock {
     public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World worldIn, EntityPlayer playerIn, EnumHand hand) {
 		ActionResult<ItemStack> returnValue = new ActionResult(EnumActionResult.PASS, stack);
 		
+		System.out.println("Right clicked an empty cup");
+		
 		if (!processRightClickForWater(stack, worldIn, playerIn)) {
 			RayTraceResult raytrace = this.rayTrace(worldIn, playerIn, true);
 			
-			if (raytrace.getBlockPos() != null) {
+			if (raytrace != null && raytrace.typeOfHit == RayTraceResult.Type.BLOCK) {
 				BlockPos blockPos = raytrace.getBlockPos();
 				float hitX = raytrace.getBlockPos().getX();
 				float hitY = raytrace.getBlockPos().getY();

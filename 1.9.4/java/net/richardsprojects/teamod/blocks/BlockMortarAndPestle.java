@@ -17,6 +17,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
@@ -110,13 +111,14 @@ public class BlockMortarAndPestle extends Block implements ITileEntityProvider {
 	@Override
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, @Nullable ItemStack heldItem, 
 			EnumFacing side, float hitX, float hitY, float hitZ) {
+		
 		ItemStack itemInUse = player.inventory.getCurrentItem();
 		boolean reduceDurability = false;
 		
 		if (itemInUse != null && itemInUse.getItem() == CoffeeAndTeaModItems.teaLeaves) {
 			reduceDurability = true;
 			if (world.isRemote) {
-				world.playBroadcastSound(1020, pos, 0);
+				world.playEvent(1030, pos, 0);
 			}
 			
 			if (!world.isRemote) {
@@ -134,7 +136,7 @@ public class BlockMortarAndPestle extends Block implements ITileEntityProvider {
 		if (itemInUse != null && itemInUse.getItem() == CoffeeAndTeaModItems.roastedCoffeeBean) {
 			reduceDurability = true;
 			if (world.isRemote) {
-				world.playBroadcastSound(1020, pos, 0);
+				world.playEvent(1030, pos, 0);
 			}
 			
 			if (!world.isRemote) {
@@ -153,7 +155,7 @@ public class BlockMortarAndPestle extends Block implements ITileEntityProvider {
 			TileEntityMortarAndPestle tile = (TileEntityMortarAndPestle) world.getTileEntity(pos);
 			tile.setDurability(tile.getDurability() - 1);
 			if (tile.getDurability() == 0) {
-				world.setBlockToAir(pos);
+				world.setBlockState(pos, Blocks.AIR.getBlockState().getBaseState());
 			}
 		}
 		
@@ -173,18 +175,21 @@ public class BlockMortarAndPestle extends Block implements ITileEntityProvider {
 		tile.setDurability(durability);
     }
 	
-	@Override
 	/**
 	 * Used to drop a "Mortar and Pestle" item with the corresponding durability damage.
 	 */
+	@Override
     public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
     {
         TileEntityMortarAndPestle tile = (TileEntityMortarAndPestle) worldIn.getTileEntity(pos);
        	int itemDamage = 64 - tile.getDurability();
-       	ItemStack pestle = new ItemStack(CoffeeAndTeaModBlocks.mortarAndPestle, 1);
-       	pestle.setItemDamage(itemDamage);
-       	EntityItem item = new EntityItem(worldIn, pos.getX(), pos.getY() + 1, pos.getZ(), pestle);
-        worldIn.spawnEntityInWorld(item);
+       	
+       	if (itemDamage < 64) {
+       		ItemStack pestle = new ItemStack(CoffeeAndTeaModBlocks.mortarAndPestle, 1);
+       		pestle.setItemDamage(itemDamage);
+       		EntityItem item = new EntityItem(worldIn, pos.getX(), pos.getY() + 1, pos.getZ(), pestle);
+       		worldIn.spawnEntityInWorld(item);
+       	}	
         
         super.breakBlock(worldIn, pos, state);
     }
