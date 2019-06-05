@@ -1,0 +1,21 @@
+itemGroup.tabCoffeeAndTea=Richard's Kaffee und Tee "Mod"
+
+item.teaSeed.name=Teesamen
+item.unroastedCoffeeBean.name=Kaffeebohne
+item.roastedCoffeeBean.name=Geröstete Kaffeebohne
+item.clayCup.name=Lehm Tasse (Unvollendet)
+item.waterCup.name=Tasse Wasser
+item.teaLeaves.name=Teeblätter
+item.groundTeaLeaves.name=Gemahlene Teeblätter
+item.boilingCup.name=Tasse Wasser (Seiden)
+item.coffeeGrounds.name=Kaffeesatz
+item.mortarAndPestle.name=Mörser und Stößel
+
+tile.emptyCup.name=Leere Tasse
+tile.mortarAndPestle.name=Mörser und Stößel
+tile.fullCoffeeCup.name=Voller Tasse Kaffee
+tile.halfCoffeeCup.name=Eine halbe Tasse Kaffee
+tile.fullCoffeeSugarCup.name=Voller Tasse Kaffee mit Zucker
+tile.halfCoffeeSugarCup.name=Eine halbe Tasse Kaffee mit Zucker
+tile.halfTeaCup.name=Voller Tasse Tee
+tile.fullTeaCup.name=Eine halbe Tasse Tee
