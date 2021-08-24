@@ -1,0 +1,16 @@
+[
+{
+  "modid": "teamod",
+  "name": "Richard's Coffee & Tea Mod",
+  "description": "Adds coffee, tea, cups, a mortar and pestle, and their plants.",
+  "version": "1.2.1",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Glorfindel22 (AKA RichardPlaysMC)"],
+  "credits": "Glorfindel22 (AKA RichardPlaysMC)",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
