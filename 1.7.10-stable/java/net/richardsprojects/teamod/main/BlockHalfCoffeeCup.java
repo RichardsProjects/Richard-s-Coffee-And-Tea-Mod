@@ -100,7 +100,7 @@ public class BlockHalfCoffeeCup extends BlockContainer {
 			if(!world.isRemote)
 			{
 				//Add Potion Effect
-				player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 9600, 0));
+				player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 1200, 0));
 				
 				//Current Cup metadata
 				int metadata = world.getBlockMetadata(x, y, z);

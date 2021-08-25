@@ -90,7 +90,7 @@ public class BlockHalfTeaCup extends BlockContainer
 			if(!world.isRemote)
 			{
 				//Add Potion Effect
-				player.addPotionEffect(new PotionEffect(Potion.regeneration.getId(), 9600, 0));
+				player.addPotionEffect(new PotionEffect(Potion.regeneration.getId(), 1200, 0));
 				
 				//Fill Up Hunger
 				player.getFoodStats().addStats(4, 2.4F);

@@ -71,37 +71,31 @@ public class BlockTeaBush extends BlockContainer implements IGrowable {
 		GameRegistry.registerBlock(teaBush, teaBush.getUnlocalizedName());
 	}
 	
-	//Set the TileEntity
 	@Override
 	public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_)
 	{
 		return new TeaBushEntity();
 	}
 
-	//Can be grown on farmland, dirt, or grass
 	protected boolean canPlaceBlockOn(Block block)
     {
         return block == Blocks.farmland;
     }
 	
-	//Not a normal renderType
-    @Override
+	@Override
     public int getRenderType() {
             return -1;
     }
    
-    //It's not an opaque cube
     @Override
     public boolean isOpaqueCube() {
             return false;
     }
    
-    //It's not a normal block
     public boolean renderAsNormalBlock() {
             return false;
     }
 	
-	//Returns whether its fully grown?
 	@Override
 	public boolean func_149851_a(World world, int x, int y, int z, boolean flag)
 	{		

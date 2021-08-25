@@ -94,7 +94,7 @@ public class BlockFullCoffeeCupSugar extends BlockContainer {
 			if(!world.isRemote)
 			{
 				//Add Potion Effect
-				player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 9600, 1));
+				player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 1200, 1));
 				
 				//Fill Up Hunger
 				player.getFoodStats().addStats(6, 2.4F);

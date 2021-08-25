@@ -19,7 +19,7 @@ public class ItemCoffeeCup extends Item
 		
 	}
 	
-	//Item Registration Code
+	// item registration code
 	public static void mainRegistry()	
 	{
 		initializeItem();
