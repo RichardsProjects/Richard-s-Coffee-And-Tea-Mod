@@ -1,0 +1,49 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+		{
+			"rolls": 1,
+			"name": "tall_grass_tea_mod",
+			"conditions": [
+				{
+					"condition": "minecraft:random_chance",
+					"chance": 0.0625
+				},
+				{
+					"condition": "minecraft:inverted",
+					"term": {
+						"condition": "minecraft:match_tool",
+						"predicate": {
+							"item": "minecraft:shears"
+						}
+					}
+				}
+			],
+			"functions": [
+				{
+					"function": "minecraft:apply_bonus",
+					"enchantment": "minecraft:fortune",
+					"formula": "minecraft:uniform_bonus_count",
+					"parameters": {
+						"bonusMultiplier": 2
+					}
+				},
+				{
+					"function": "minecraft:explosion_decay"
+				}
+			],
+			"entries": [
+				{
+					"type": "item",
+					"name": "teamod:tea_seed",
+					"weight": 1
+				},
+				{
+					"type": "item",
+					"name": "teamod:unroasted_coffee_bean",
+					"weight": 1
+				}
+			]
+		}
+	]
+}

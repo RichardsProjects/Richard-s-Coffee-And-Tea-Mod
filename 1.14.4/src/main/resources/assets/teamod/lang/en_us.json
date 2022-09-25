@@ -1,0 +1,23 @@
+{
+  "itemGroup.teamod": "Richard's Coffee and Tea Mod",
+  
+  "item.teamod.tea_seed": "Tea Seed",
+  "item.teamod.unroasted_coffee_bean": "Coffee Bean",
+  "item.teamod.roasted_coffee_bean": "Roasted Coffee Bean",
+  "item.teamod.clay_cup": "Clay Cup (Unfinished)",
+  "item.teamod.water_cup": "Cup of Water",
+  "item.teamod.tea_leaves": "Tea Leaves",
+  "item.teamod.ground_tea_leaves": "Ground Tea Leaves",
+  "item.teamod.boiling_cup": "Boiling Cup of Water",
+  "item.teamod.coffee_grounds": "Coffee Grounds",
+  "item.teamod.mortar_and_pestle": "Mortar and Pestle",
+
+  "tile.teamod.empty_cup": "Empty Cup",
+  "tile.teamod.mortar_and_pestle": "Mortar and Pestle",
+  "tile.teamod.full_coffee_cup": "Full Cup of Coffee",
+  "tile.teamod.half_coffee_Cup": "Half Cup of Coffee",
+  "tile.teamod.full_coffee_sugar_cup": "Full Cup of Coffee with Sugar",
+  "tile.teamod.half_coffee_sugar_cup": "Half Cup of Coffee with Sugar",
+  "tile.teamod.half_Tea_cup": "Half Cup of Tea",
+  "tile.teamod.full_tea_cup": "Full Cup of Tea"
+}
