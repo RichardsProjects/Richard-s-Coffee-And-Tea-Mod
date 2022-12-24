@@ -36,7 +36,7 @@ public class CoffeeAndTeaMod {
     //     [X] Update bounding box to match model
     //     [X] Fix slight issue with leaf texture on bottom of one side of plate
     //     [X] Get Empty Cup furnace recipe working
-    // [ ] Allow empty cup be able to be filled with water
+    // [X] Allow empty cup be able to be filled with water
     // [ ] Add boiling water cup furnace recipe
     // [X] Add Full Coffee cups to the mod
     //    [X] Make sure recipe works
