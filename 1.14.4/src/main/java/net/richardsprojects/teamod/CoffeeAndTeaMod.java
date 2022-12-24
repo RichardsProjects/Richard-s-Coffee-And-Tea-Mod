@@ -30,26 +30,30 @@ public class CoffeeAndTeaMod {
     //     [X] Fix issues with boxes not appearing around Coffee Bushes
 	//     [X] Make sure the model shows for later stages
     //     [X] Get drop table working for Coffee Bushes
-    // [ ] Add Tea Bushes to the mod (just copy the coffee bushes for this)
-    // [ ] Add Empty Cup Block
-    //     [ ] Make sure model is working
-    //     [ ] Make bounding box for model
-    //     [ ] Get Empty Cup furnace recipe working
-            /* empty_cup.json
-            {
-                "type": "minecraft:smelting",
-                    "ingredient": {"item": "teamod:clay_cup"},
-                "result": "teamod:empty_cup",
-                    "experience": 0.5,
-                    "cookingtime": 200
-
-            }*/
+    // [X] Add Empty Cup Block
+    //     [X] Fix issue with block lighting
+    //     [X] Make sure model is working
+    //     [X] Update bounding box to match model
+    //     [X] Fix slight issue with leaf texture on bottom of one side of plate
+    //     [X] Get Empty Cup furnace recipe working
+    // [ ] Allow empty cup be able to be filled with water
     // [ ] Add boiling water cup furnace recipe
-	// [ ] Add Coffee cups to the mod
+    // [X] Add Full Coffee cups to the mod
+    //    [X] Make sure recipe works
+    //    [X] Allow full coffee cups to be drank from
+    // [X] Add Half Coffee cups to the mod
+    //    [X] Allow half coffee cups to be drank from
+    // [ ] Add Sugar Coffee Cups to mod
+
+    // [ ] Add Tea Bushes to the mod (just copy the coffee bushes for this)
     // [ ] Add Tea Cups to the mod
+
 	// [ ] Add Mortar and Pestle Block to the mod
 	// [ ] Get Mortar and Pestle Recipes working
+
 	// [ ] Get terrain generation working
+    // [ ] Verify that coffee and tea seeds appear in dungeons and mineshafts
+
     // [ ] Update Korean and German language files to use JSON
 	
     public CoffeeAndTeaMod() {
