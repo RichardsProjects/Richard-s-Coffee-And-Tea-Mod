@@ -1,5 +1,6 @@
 package net.richardsprojects.teamod;
 
+import net.richardsprojects.teamod.tile.CoffeeAndTeaModTileEntities;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -37,7 +38,7 @@ public class CoffeeAndTeaMod {
     //     [X] Fix slight issue with leaf texture on bottom of one side of plate
     //     [X] Get Empty Cup furnace recipe working
     // [X] Allow empty cup be able to be filled with water
-    // [ ] Add boiling water cup furnace recipe
+    // [X] Add boiling water cup furnace recipe
     // [X] Add Full Coffee cups to the mod
     //    [X] Make sure recipe works
     //    [X] Allow full coffee cups to be drank from
@@ -57,9 +58,11 @@ public class CoffeeAndTeaMod {
     // [ ] Update Korean and German language files to use JSON
 	
     public CoffeeAndTeaMod() {
-        CoffeeAndTeaModBlocks.register(); // register blocks
-        CoffeeAndTeaModItems.register(); // register items
-        
+        // register blocks, items and tile entities
+        CoffeeAndTeaModBlocks.register();
+        CoffeeAndTeaModItems.register();
+        CoffeeAndTeaModTileEntities.register();
+
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(ModSetup::init);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientSetup::init);
