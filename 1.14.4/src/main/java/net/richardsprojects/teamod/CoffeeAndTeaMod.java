@@ -46,11 +46,19 @@ public class CoffeeAndTeaMod {
     //    [X] Allow half coffee cups to be drank from
     // [ ] Add Sugar Coffee Cups to mod
 
+    // [ ] Add Mortar and Pestle Block to the mod
+    //      [X] ItemBlock
+    //      [X] Block and Tile Entity
+    //      [ ] Update rendering to appear cracked from
+    //      [ ] Make use lower NBT durability data
+    //      [ ] Make sure data gets after logging back in
+    //      [ ] Allow it to be used to grind coffee beans
+    //      [X] Add crafting recipe
+    //      [ ] Add recipes for it being used over time
+    //      [ ] Get it to drop a damaged version of it when broken
+
     // [ ] Add Tea Bushes to the mod (just copy the coffee bushes for this)
     // [ ] Add Tea Cups to the mod
-
-	// [ ] Add Mortar and Pestle Block to the mod
-	// [ ] Get Mortar and Pestle Recipes working
 
 	// [ ] Get terrain generation working
     // [ ] Verify that coffee and tea seeds appear in dungeons and mineshafts
@@ -68,11 +76,10 @@ public class CoffeeAndTeaMod {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientSetup::init);
     }
     
-
     public static final ItemGroup ITEM_GROUP = new ItemGroup("teamod") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(CoffeeAndTeaModItems.COFFEE_GROUNDS.get());
+            return new ItemStack(CoffeeAndTeaModItems.ROASTED_COFFEE_BEAN.get());
         }
     };
 

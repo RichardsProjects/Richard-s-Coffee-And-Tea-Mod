@@ -29,5 +29,7 @@ public class CoffeeAndTeaModItems {
 	public static final RegistryObject<ItemBlockHalfCoffeeCup> ITEM_BLOCK_HALF_COFFEE_CUP = ITEMS.register("half_coffee_cup", ItemBlockHalfCoffeeCup::new);
 	public static final RegistryObject<ItemWaterCup> WATER_CUP = ITEMS.register("water_cup", ItemWaterCup::new);
 
+	public static final RegistryObject<ItemBlockMortarAndPestle> ITEM_BLOCK_MORTAR_AND_PESTLE = ITEMS.register("mortar_and_pestle", ItemBlockMortarAndPestle::new);
+
 	
 }

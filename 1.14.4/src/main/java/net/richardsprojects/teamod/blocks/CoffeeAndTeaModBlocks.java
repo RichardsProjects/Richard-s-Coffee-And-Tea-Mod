@@ -1,6 +1,5 @@
 package net.richardsprojects.teamod.blocks;
 
-import com.sun.org.apache.regexp.internal.RE;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
