@@ -19,7 +19,7 @@ public class ItemBlockMortarAndPestle extends BlockNamedItem {
     public ItemBlockMortarAndPestle() {
         super(
             CoffeeAndTeaModBlocks.MORTAR_AND_PESTLE.get(),
-            new Properties().group(CoffeeAndTeaMod.ITEM_GROUP).maxStackSize(1)
+            new Properties().group(CoffeeAndTeaMod.ITEM_GROUP).maxStackSize(1).maxDamage(64)
         );
     }
 }

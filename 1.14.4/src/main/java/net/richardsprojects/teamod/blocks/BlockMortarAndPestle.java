@@ -2,25 +2,34 @@ package net.richardsprojects.teamod.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.IProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.tileentity.AbstractFurnaceTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.text.*;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.richardsprojects.teamod.tile.MortarAndPestleTile;
+import net.richardsprojects.teamod.items.CoffeeAndTeaModItems;
+import net.richardsprojects.teamod.tile.TileMortarAndPestle;
 
+import javax.annotation.Nullable;
 
 public class BlockMortarAndPestle extends Block {
 
@@ -38,7 +47,7 @@ public class BlockMortarAndPestle extends Block {
 
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return new MortarAndPestleTile();
+        return new TileMortarAndPestle();
     }
 
     @Override
@@ -63,14 +72,83 @@ public class BlockMortarAndPestle extends Block {
         return true;
     }
 
-    public void onBlockPlacedBy(World p_180633_1_, BlockPos p_180633_2_, BlockState p_180633_3_, LivingEntity p_180633_4_, ItemStack p_180633_5_) {
-        if (p_180633_5_.hasDisplayName()) {
-            TileEntity lvt_6_1_ = p_180633_1_.getTileEntity(p_180633_2_);
-            if (lvt_6_1_ instanceof AbstractFurnaceTileEntity) {
-                ((AbstractFurnaceTileEntity)lvt_6_1_).setCustomName(p_180633_5_.getDisplayName());
+    @Override
+    public boolean onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+        ItemStack itemInUse = player.inventory.getCurrentItem();
+        boolean reduceDurability = false;
+
+        if (itemInUse != null && itemInUse.getItem() == CoffeeAndTeaModItems.ROASTED_COFFEE_BEAN.get()) {
+            reduceDurability = true;
+            if (world.isRemote) {
+                world.playEvent(1030, pos, 0);
+            }
+
+            if (!world.isRemote) {
+                if (itemInUse.getCount() > 0) {
+                    itemInUse.shrink(1);
+                } else {
+                    player.inventory.setInventorySlotContents(player.inventory.currentItem, null);
+                }
+                ItemEntity item = new ItemEntity(player.world, pos.getX(), pos.getY() + 1, pos.getZ(),
+                        new ItemStack(CoffeeAndTeaModItems.COFFEE_GROUNDS.get(), 1));
+                world.addEntity(item);
             }
         }
 
+        if (reduceDurability) {
+            TileMortarAndPestle tile = (TileMortarAndPestle) world.getTileEntity(pos);
+
+            // notify the player
+            int newDurability = tile.getDurability() - 1;
+            if (newDurability <= 10 && newDurability > 0 && world.isRemote) {
+                player.sendMessage(new StringTextComponent("The mortar and pestle has " + newDurability + " uses left."));
+            }
+
+            // update durability
+            tile.setDurability(newDurability);
+            if (tile.getDurability() == 0) {
+                world.setBlockState(pos, Blocks.AIR.getDefaultState());
+            }
+
+            // make sound on break
+            if (newDurability == 0 && world.isRemote) {
+                world.playEvent(1029, pos, 0);
+            }
+        }
+
+        return true;
+    }
+
+    @Override
+    public void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+        TileEntity tile = worldIn.getTileEntity(pos);
+        if (tile != null && tile instanceof TileMortarAndPestle) {
+            TileMortarAndPestle mortarAndPestle = (TileMortarAndPestle) tile;
+            mortarAndPestle.setDurability(64 - stack.getDamage());
+        }
+    }
+
+    @Override
+    public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
+        if (state.getBlock() != newState.getBlock()) {
+            TileEntity tile = worldIn.getTileEntity(pos);
+            if (tile != null && tile instanceof TileMortarAndPestle) {
+                TileMortarAndPestle mortarAndPestle = (TileMortarAndPestle) tile;
+
+                if (mortarAndPestle.getDurability() > 0) {
+                    ItemStack pestle = new ItemStack(CoffeeAndTeaModItems.ITEM_BLOCK_MORTAR_AND_PESTLE.get(), 1);
+
+                    int itemDamage = 64 - mortarAndPestle.getDurability();
+                    pestle.setDamage(itemDamage);
+
+                    ItemEntity item = new ItemEntity(worldIn, pos.getX(), pos.getY() + 1, pos.getZ(), pestle);
+                    worldIn.addEntity(item);
+                }
+
+            }
+
+            super.onReplaced(state, worldIn, pos, newState, isMoving);
+        }
     }
 
 }

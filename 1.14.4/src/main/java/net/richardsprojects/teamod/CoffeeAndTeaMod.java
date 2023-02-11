@@ -44,26 +44,30 @@ public class CoffeeAndTeaMod {
     //    [X] Allow full coffee cups to be drank from
     // [X] Add Half Coffee cups to the mod
     //    [X] Allow half coffee cups to be drank from
-    // [ ] Add Sugar Coffee Cups to mod
 
-    // [ ] Add Mortar and Pestle Block to the mod
+    // [X] Add Mortar and Pestle Block to the mod
     //      [X] ItemBlock
     //      [X] Block and Tile Entity
-    //      [ ] Update rendering to appear cracked from
-    //      [ ] Make use lower NBT durability data
-    //      [ ] Make sure data gets after logging back in
-    //      [ ] Allow it to be used to grind coffee beans
+    //      [X] PlayEvent when Mortar and Pestle breaks (use anvil break)
+    //      [X] Give warnings durability less than or equal to 10
+    //      [X] Make use lower NBT durability data
+    //      [X] Make sure durability gets preserved between logins
+    //      [X] Allow it to be used to grind coffee beans
     //      [X] Add crafting recipe
-    //      [ ] Add recipes for it being used over time
-    //      [ ] Get it to drop a damaged version of it when broken
+    //      [X] Get it to drop a damaged version of it when broken
+    //      [X] Get it to place with the correct amount of durability left
 
-    // [ ] Add Tea Bushes to the mod (just copy the coffee bushes for this)
-    // [ ] Add Tea Cups to the mod
+    // [ ] Remaining for first version
+    //      [ ] Add Tea Bushes to the mod
+    //      [ ] Add support for tea leaves to mortar and pestle
+    //      [ ] Add Tea Cups to the mod
+    //      [ ] Add Sugar Coffee Cups to mod
 
-	// [ ] Get terrain generation working
-    // [ ] Verify that coffee and tea seeds appear in dungeons and mineshafts
-
-    // [ ] Update Korean and German language files to use JSON
+    // [ ] Possible following updates:
+	//      [ ] Get terrain generation working
+    //      [ ] Verify that coffee and tea seeds appear in dungeons and mineshafts
+    //      [ ] Update Korean and German language files to use JSON
+    //      [ ] Add AppleSkin support
 	
     public CoffeeAndTeaMod() {
         // register blocks, items and tile entities
