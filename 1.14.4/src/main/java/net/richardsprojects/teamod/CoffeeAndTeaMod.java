@@ -60,7 +60,7 @@ public class CoffeeAndTeaMod {
     // [ ] Remaining for first version
     //      [X] Add Tea Bushes to the mod
     //      [X] Add support for tea leaves to mortar and pestle
-    //      [ ] Add Tea Cups to the mod
+    //      [X] Add Tea Cups to the mod
     //      [ ] Add Sugar Coffee Cups to mod
 
     // [ ] Possible following updates:

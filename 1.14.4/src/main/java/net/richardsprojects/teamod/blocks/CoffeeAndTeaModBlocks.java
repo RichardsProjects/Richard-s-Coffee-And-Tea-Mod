@@ -16,11 +16,13 @@ public class CoffeeAndTeaModBlocks {
 	}
 	
 	public static final RegistryObject<BlockCoffeeBush> COFFEE_BUSH = BLOCKS.register("coffee_bush", BlockCoffeeBush::new);
+	public static final RegistryObject<BlockTeaBush> TEA_BUSH = BLOCKS.register("tea_bush", BlockTeaBush::new);
 
 	public static final RegistryObject<BlockEmptyCup> EMPTY_CUP = BLOCKS.register("empty_cup", BlockEmptyCup::new);
 	public static final RegistryObject<BlockFullCoffeeCup> FULL_COFFEE_CUP = BLOCKS.register("full_coffee_cup", BlockFullCoffeeCup::new);
 	public static final RegistryObject<BlockHalfCoffeeCup> HALF_COFFEE_CUP = BLOCKS.register("half_coffee_cup", BlockHalfCoffeeCup::new);
-	public static final RegistryObject<BlockTeaBush> TEA_BUSH = BLOCKS.register("tea_bush", BlockTeaBush::new);
+	public static final RegistryObject<BlockFullTeaCup> FULL_TEA_CUP = BLOCKS.register("full_tea_cup", BlockFullTeaCup::new);
+	public static final RegistryObject<BlockHalfTeaCup> HALF_TEA_CUP = BLOCKS.register("half_tea_cup", BlockHalfTeaCup::new);
 
 	public static final RegistryObject<BlockMortarAndPestle> MORTAR_AND_PESTLE = BLOCKS.register("mortar_and_pestle", BlockMortarAndPestle::new);
 

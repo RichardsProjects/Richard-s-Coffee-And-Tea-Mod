@@ -2,13 +2,17 @@ package net.richardsprojects.teamod.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
-import net.minecraft.state.*;
+import net.minecraft.state.DirectionProperty;
+import net.minecraft.state.IProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
@@ -19,14 +23,15 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
-public class BlockHalfCoffeeCup extends Block {
+public class BlockFullTeaCup extends Block {
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    public BlockHalfCoffeeCup() {
-        super(Block.Properties.create(Material.CLAY).hardnessAndResistance(0.1F));
+    public BlockFullTeaCup() {
+        super(Properties.create(Material.CLAY).hardnessAndResistance(0.1F));
         this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
     }
 
@@ -54,23 +59,32 @@ public class BlockHalfCoffeeCup extends Block {
 
     public boolean onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
         if (!worldIn.isRemote) {
-            return this.drinkCoffee(worldIn, pos, state, player);
+            return this.drinkTea(worldIn, pos, state, player);
         } else {
             ItemStack itemstack = player.getHeldItem(handIn);
-            return this.drinkCoffee(worldIn, pos, state, player) || itemstack.isEmpty();
+            return this.drinkTea(worldIn, pos, state, player) || itemstack.isEmpty();
         }
     }
 
-    private boolean drinkCoffee(IWorld worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
+    public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+        return facing == Direction.DOWN && !stateIn.isValidPosition(worldIn, currentPos) ? Blocks.AIR.getDefaultState() : super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+    }
+
+    public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
+        return worldIn.getBlockState(pos.down()).getMaterial().isSolid();
+    }
+
+    private boolean drinkTea(IWorld worldIn, BlockPos pos, BlockState state, PlayerEntity player) {
         if (!player.canEat(false)) {
             return false;
         } else {
             player.getFoodStats().addStats(2, 1F);
-            player.addPotionEffect(new EffectInstance(Effects.SPEED.getEffect(), 1200, 0));
+            player.addPotionEffect(new EffectInstance(Effects.REGENERATION.getEffect(), 1200, 0));
 
-            BlockState newState = CoffeeAndTeaModBlocks.EMPTY_CUP.get().getDefaultState();
-            newState.with(BlockEmptyCup.FACING, state.get(BlockHalfCoffeeCup.FACING));
+            BlockState newState = CoffeeAndTeaModBlocks.HALF_TEA_CUP.get().getDefaultState();
+            newState.with(BlockHalfCoffeeCup.FACING, state.get(BlockFullTeaCup.FACING));
             worldIn.setBlockState(pos, newState, 3);
+
             return true;
         }
     }

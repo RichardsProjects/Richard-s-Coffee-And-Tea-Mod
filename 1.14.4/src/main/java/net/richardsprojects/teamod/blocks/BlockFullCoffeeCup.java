@@ -7,6 +7,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.state.*;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.BlockRenderLayer;
@@ -73,7 +75,8 @@ public class BlockFullCoffeeCup extends Block {
         if (!player.canEat(false)) {
             return false;
         } else {
-            player.getFoodStats().addStats(2, 0.1F);
+            player.getFoodStats().addStats(2, 1F);
+            player.addPotionEffect(new EffectInstance(Effects.SPEED.getEffect(), 1200, 0));
 
             BlockState newState = CoffeeAndTeaModBlocks.HALF_COFFEE_CUP.get().getDefaultState();
             newState.with(BlockHalfCoffeeCup.FACING, state.get(BlockFullCoffeeCup.FACING));
