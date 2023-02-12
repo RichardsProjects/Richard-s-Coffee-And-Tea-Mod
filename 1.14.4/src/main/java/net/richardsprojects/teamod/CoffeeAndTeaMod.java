@@ -58,8 +58,8 @@ public class CoffeeAndTeaMod {
     //      [X] Get it to place with the correct amount of durability left
 
     // [ ] Remaining for first version
-    //      [ ] Add Tea Bushes to the mod
-    //      [ ] Add support for tea leaves to mortar and pestle
+    //      [X] Add Tea Bushes to the mod
+    //      [X] Add support for tea leaves to mortar and pestle
     //      [ ] Add Tea Cups to the mod
     //      [ ] Add Sugar Coffee Cups to mod
 

@@ -95,6 +95,24 @@ public class BlockMortarAndPestle extends Block {
             }
         }
 
+        if (itemInUse != null && itemInUse.getItem() == CoffeeAndTeaModItems.TEA_LEAVES.get()) {
+            reduceDurability = true;
+            if (world.isRemote) {
+                world.playEvent(1030, pos, 0);
+            }
+
+            if (!world.isRemote) {
+                if (itemInUse.getCount() > 0) {
+                    itemInUse.shrink(1);
+                } else {
+                    player.inventory.setInventorySlotContents(player.inventory.currentItem, null);
+                }
+                ItemEntity item = new ItemEntity(player.world, pos.getX(), pos.getY() + 1, pos.getZ(),
+                        new ItemStack(CoffeeAndTeaModItems.GROUND_TEA_LEAVES.get(), 1));
+                world.addEntity(item);
+            }
+        }
+
         if (reduceDurability) {
             TileMortarAndPestle tile = (TileMortarAndPestle) world.getTileEntity(pos);
 
