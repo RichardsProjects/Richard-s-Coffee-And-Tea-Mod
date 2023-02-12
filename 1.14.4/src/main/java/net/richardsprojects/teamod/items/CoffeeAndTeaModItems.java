@@ -27,6 +27,8 @@ public class CoffeeAndTeaModItems {
 	public static final RegistryObject<ItemBlockEmptyCup> ITEM_BLOCK_EMPTY_CUP = ITEMS.register("empty_cup", ItemBlockEmptyCup::new);
 	public static final RegistryObject<ItemBlockFullCoffeeCup> ITEM_BLOCK_FULL_COFFEE_CUP = ITEMS.register("full_coffee_cup", ItemBlockFullCoffeeCup::new);
 	public static final RegistryObject<ItemBlockHalfCoffeeCup> ITEM_BLOCK_HALF_COFFEE_CUP = ITEMS.register("half_coffee_cup", ItemBlockHalfCoffeeCup::new);
+	public static final RegistryObject<ItemBlockFullCoffeeSugarCup> ITEM_BLOCK_FULL_COFFEE_SUGAR_CUP = ITEMS.register("full_coffee_sugar_cup", ItemBlockFullCoffeeSugarCup::new);
+	public static final RegistryObject<ItemBlockHalfCoffeeSugarCup> ITEM_BLOCK_HALF_COFFEE_SUGAR_CUP = ITEMS.register("half_coffee_sugar_cup", ItemBlockHalfCoffeeSugarCup::new);
 	public static final RegistryObject<ItemBlockFullTeaCup> ITEM_BLOCK_FULL_TEA_CUP = ITEMS.register("full_tea_cup", ItemBlockFullTeaCup::new);
 	public static final RegistryObject<ItemBlockHalfTeaCup> ITEM_BLOCK_HALF_TEA_CUP = ITEMS.register("half_tea_cup", ItemBlockHalfTeaCup::new);
 	public static final RegistryObject<ItemWaterCup> WATER_CUP = ITEMS.register("water_cup", ItemWaterCup::new);

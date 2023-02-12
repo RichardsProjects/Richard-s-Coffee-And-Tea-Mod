@@ -21,6 +21,8 @@ public class CoffeeAndTeaModBlocks {
 	public static final RegistryObject<BlockEmptyCup> EMPTY_CUP = BLOCKS.register("empty_cup", BlockEmptyCup::new);
 	public static final RegistryObject<BlockFullCoffeeCup> FULL_COFFEE_CUP = BLOCKS.register("full_coffee_cup", BlockFullCoffeeCup::new);
 	public static final RegistryObject<BlockHalfCoffeeCup> HALF_COFFEE_CUP = BLOCKS.register("half_coffee_cup", BlockHalfCoffeeCup::new);
+	public static final RegistryObject<BlockFullCoffeeSugarCup> FULL_COFFEE_SUGAR_CUP = BLOCKS.register("full_coffee_sugar_cup", BlockFullCoffeeSugarCup::new);
+	public static final RegistryObject<BlockHalfCoffeeSugarCup> HALF_COFFEE_SUGAR_CUP = BLOCKS.register("half_coffee_sugar_cup", BlockHalfCoffeeSugarCup::new);
 	public static final RegistryObject<BlockFullTeaCup> FULL_TEA_CUP = BLOCKS.register("full_tea_cup", BlockFullTeaCup::new);
 	public static final RegistryObject<BlockHalfTeaCup> HALF_TEA_CUP = BLOCKS.register("half_tea_cup", BlockHalfTeaCup::new);
 

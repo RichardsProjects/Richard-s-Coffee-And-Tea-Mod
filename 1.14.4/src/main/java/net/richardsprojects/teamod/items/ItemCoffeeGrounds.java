@@ -6,7 +6,7 @@ import net.richardsprojects.teamod.CoffeeAndTeaMod;
 public class ItemCoffeeGrounds extends Item {
 
 	public ItemCoffeeGrounds() {
-		super(new Item.Properties()
+		super(new Properties()
 			.group(CoffeeAndTeaMod.ITEM_GROUP)
 		);
 	}

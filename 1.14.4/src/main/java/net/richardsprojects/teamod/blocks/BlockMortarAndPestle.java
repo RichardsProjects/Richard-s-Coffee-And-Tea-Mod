@@ -36,7 +36,7 @@ public class BlockMortarAndPestle extends Block {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     public BlockMortarAndPestle() {
-        super(Block.Properties.create(Material.ROCK).hardnessAndResistance(4.0F));
+        super(Properties.create(Material.ROCK).hardnessAndResistance(4.0F));
         this.setDefaultState(this.stateContainer.getBaseState().with(this.FACING, Direction.NORTH));
     }
 

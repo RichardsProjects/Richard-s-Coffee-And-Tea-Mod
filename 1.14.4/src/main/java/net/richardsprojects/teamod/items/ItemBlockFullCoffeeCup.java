@@ -8,6 +8,6 @@ import net.richardsprojects.teamod.blocks.CoffeeAndTeaModBlocks;
 public class ItemBlockFullCoffeeCup extends BlockNamedItem {
 
     public ItemBlockFullCoffeeCup() {
-        super(CoffeeAndTeaModBlocks.FULL_COFFEE_CUP.get(), new Item.Properties().group(CoffeeAndTeaMod.ITEM_GROUP));
+        super(CoffeeAndTeaModBlocks.FULL_COFFEE_CUP.get(), new Properties().group(CoffeeAndTeaMod.ITEM_GROUP));
     }
 }

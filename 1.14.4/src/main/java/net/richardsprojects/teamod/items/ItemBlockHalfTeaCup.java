@@ -7,6 +7,6 @@ import net.richardsprojects.teamod.blocks.CoffeeAndTeaModBlocks;
 public class ItemBlockHalfTeaCup extends BlockNamedItem {
 
     public ItemBlockHalfTeaCup() {
-        super(CoffeeAndTeaModBlocks.HALF_TEA_CUP.get(), new Properties().group(CoffeeAndTeaMod.ITEM_GROUP));
+        super(CoffeeAndTeaModBlocks.HALF_TEA_CUP.get(), new Properties().group(CoffeeAndTeaMod.ITEM_GROUP).maxStackSize(1).maxStackSize(1));
     }
 }

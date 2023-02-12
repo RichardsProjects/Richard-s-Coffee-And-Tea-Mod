@@ -26,7 +26,7 @@ public class BlockHalfCoffeeCup extends Block {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     public BlockHalfCoffeeCup() {
-        super(Block.Properties.create(Material.CLAY).hardnessAndResistance(0.1F));
+        super(Properties.create(Material.CLAY).hardnessAndResistance(0.1F));
         this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
     }
 

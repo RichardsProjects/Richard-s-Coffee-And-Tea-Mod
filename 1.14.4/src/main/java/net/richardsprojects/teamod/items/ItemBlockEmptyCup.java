@@ -18,7 +18,7 @@ public class ItemBlockEmptyCup extends BlockNamedItem {
     public ItemBlockEmptyCup() {
         super(
             CoffeeAndTeaModBlocks.EMPTY_CUP.get(),
-            new Item.Properties().group(CoffeeAndTeaMod.ITEM_GROUP).maxStackSize(1)
+            new Properties().group(CoffeeAndTeaMod.ITEM_GROUP).maxStackSize(1)
         );
     }
 

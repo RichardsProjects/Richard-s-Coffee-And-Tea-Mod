@@ -9,7 +9,9 @@ import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
-import net.minecraft.state.*;
+import net.minecraft.state.DirectionProperty;
+import net.minecraft.state.IProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
@@ -23,11 +25,11 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
-public class BlockFullCoffeeCup extends Block {
+public class BlockFullCoffeeSugarCup extends Block {
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-    public BlockFullCoffeeCup() {
+    public BlockFullCoffeeSugarCup() {
         super(Properties.create(Material.CLAY).hardnessAndResistance(0.1F));
         this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
     }
@@ -76,10 +78,10 @@ public class BlockFullCoffeeCup extends Block {
             return false;
         } else {
             player.getFoodStats().addStats(2, 1F);
-            player.addPotionEffect(new EffectInstance(Effects.SPEED.getEffect(), 1200, 0));
+            player.addPotionEffect(new EffectInstance(Effects.SPEED.getEffect(), 1200, 1));
 
-            BlockState newState = CoffeeAndTeaModBlocks.HALF_COFFEE_CUP.get().getDefaultState();
-            newState.with(BlockHalfCoffeeCup.FACING, state.get(BlockFullCoffeeCup.FACING));
+            BlockState newState = CoffeeAndTeaModBlocks.HALF_COFFEE_SUGAR_CUP.get().getDefaultState();
+            newState.with(BlockHalfCoffeeCup.FACING, state.get(BlockFullCoffeeSugarCup.FACING));
             worldIn.setBlockState(pos, newState, 3);
 
             return true;

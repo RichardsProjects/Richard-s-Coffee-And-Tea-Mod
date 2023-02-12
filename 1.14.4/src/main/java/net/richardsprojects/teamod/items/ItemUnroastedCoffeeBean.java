@@ -8,7 +8,7 @@ import net.richardsprojects.teamod.blocks.CoffeeAndTeaModBlocks;
 public class ItemUnroastedCoffeeBean extends BlockNamedItem {
 
 	public ItemUnroastedCoffeeBean() {
-		super(CoffeeAndTeaModBlocks.COFFEE_BUSH.get(), new Item.Properties().group(CoffeeAndTeaMod.ITEM_GROUP));
+		super(CoffeeAndTeaModBlocks.COFFEE_BUSH.get(), new Properties().group(CoffeeAndTeaMod.ITEM_GROUP));
 	}
 
 

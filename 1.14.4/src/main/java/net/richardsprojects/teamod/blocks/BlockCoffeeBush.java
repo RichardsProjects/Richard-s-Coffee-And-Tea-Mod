@@ -45,7 +45,7 @@ public class BlockCoffeeBush extends CropsBlock implements IGrowable {
 	}
 
 	public BlockCoffeeBush() {
-		super(Block.Properties.create(Material.PLANTS).hardnessAndResistance(0.0F).tickRandomly());
+		super(Properties.create(Material.PLANTS).hardnessAndResistance(0.0F).tickRandomly());
 		this.setDefaultState(this.stateContainer.getBaseState().with(this.getAgeProperty(), Integer.valueOf(0)));
 	}
 
