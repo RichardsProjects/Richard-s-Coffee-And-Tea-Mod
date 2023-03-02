@@ -1,0 +1,9 @@
+{
+  "type": "teamod:seed_drops",
+  "conditions": [
+    {
+      "condition": "block_state_property",
+      "block": "minecraft:fern"
+    }
+  ]
+}

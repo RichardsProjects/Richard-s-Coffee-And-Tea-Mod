@@ -1,0 +1,20 @@
+itemGroup.teamod=Richard's Coffee and Tea Mod
+
+item.tea_seed=차 씨앗
+item.unroasted_coffee_bean=커피 콩
+item.roasted_coffee_bean=구운 커피 콩
+item.clay_cup=점토 컵
+item.water_cup=물
+item.tea_leaves=찻잎
+item.ground_tea_leaves=찧은 찻잎
+item.boiling_cup=끓는 물
+item.coffee_grounds=찧은 커피 콩
+item.mortar_and_pestle=절구
+
+tile.empty_cup=빈 컵
+tile.mortar_and_pestle=절구
+tile.full_coffee_cup=꽉 찬 커피
+tile.half_coffee_cup=절반 찬 커피
+tile.full_coffee_sugar_cup=꽉 찬 커피 그리고 설탕
+tile.half_coffee_sugar_cup=절반 찬 커피 그리고 설탕
+tile.half_tea_cup=절반 찬 차
