@@ -10,7 +10,6 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraftforge.common.loot.IGlobalLootModifier;
 import net.minecraftforge.common.loot.LootModifier;
 import net.richardsprojects.teamod.CoffeeAndTeaMod;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
@@ -25,8 +24,8 @@ public class SeedDropLootModifier extends LootModifier {
     }
 
     @Override
-    protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        if (context.getRandom().nextInt(1) == 1) {
+    protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
+        if (context.getRandom().nextInt(2) == 1) {
             generatedLoot.add(new ItemStack(CoffeeAndTeaMod.TEA_SEED.get()));
         } else {
             generatedLoot.add(new ItemStack(CoffeeAndTeaMod.UNROASTED_COFFEE_BEAN.get()));

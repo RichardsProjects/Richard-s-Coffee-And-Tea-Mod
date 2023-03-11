@@ -1,6 +1,6 @@
 [X] Add coffee beans and tea seeds to the mod
     
-    [ ] Finish making tea seeds and unroasted coffee beans findable from breaking tall grass
+    [X] Finish making tea seeds and unroasted coffee beans findable from breaking tall grass
 
 [X] Add Coffee Bushes to the mod
 
