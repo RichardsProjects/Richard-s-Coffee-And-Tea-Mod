@@ -10,6 +10,7 @@
 
 [ ] Add Empty Cup Block
 
+    [ ] Implement item model, 3d model and block placement
     [ ] Get Empty Cup furnace recipe working
     [ ] Allow empty cup be able to be filled with water
     [ ] Add boiling water cup furnace recipe
