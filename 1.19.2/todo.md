@@ -8,15 +8,17 @@
 
 [X] Add roasted coffee beans
 
-[ ] Add Empty Cup Block
+[X] Add Empty Cup Block
+
+    [X] Implement item model, 3d model and block placement
+    [X] Get Empty Cup furnace recipe working
+    [X] Allow empty cup be able to be filled with water
+    [X] Add boiling water cup furnace recipe
+    [X] Add loot table for empty cup    
+ 
+[ ] Add Coffee cups to the mod
 
     [ ] Implement item model, 3d model and block placement
-    [ ] Get Empty Cup furnace recipe working
-    [ ] Allow empty cup be able to be filled with water
-    [ ] Add boiling water cup furnace recipe
-     
-[ ] Add Coffee cups to the mod
-    
     [ ] Make sure recipe works
     [ ] Allow full coffee cups to be drank from
     [ ] Add Half Coffee cups to the mod
