@@ -18,10 +18,11 @@
  
 [ ] Add Coffee cups to the mod
 
-    [ ] Implement item model, 3d model and block placement
-    [ ] Make sure recipe works
+    [X] Implement item model, 3d model and block placement (full cup)
+    [X] Implement item model, 3d model and block placement (half cup)
+    [X] Add recipe
+    [ ] Add coffee grounds so that recipe works
     [ ] Allow full coffee cups to be drank from
-    [ ] Add Half Coffee cups to the mod
     [ ] Allow half coffee cups to be drank from
 
 [ ] Add Mortar and Pestle Block to the mod

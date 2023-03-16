@@ -13,9 +13,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.richardsprojects.teamod.client.ClientEvents;
-import net.richardsprojects.teamod.common.blocks.BlockCoffeeBush;
-import net.richardsprojects.teamod.common.blocks.BlockEmptyCup;
-import net.richardsprojects.teamod.common.blocks.BlockTeaBush;
+import net.richardsprojects.teamod.common.blocks.*;
 import net.richardsprojects.teamod.common.items.*;
 import org.slf4j.Logger;
 
@@ -33,15 +31,18 @@ public class CoffeeAndTeaMod
     public static final RegistryObject<Block> TEA_BUSH = BLOCKS.register("tea_bush", () -> new BlockTeaBush());
     public static final RegistryObject<Block> COFFEE_BUSH = BLOCKS.register("coffee_bush", () -> new BlockCoffeeBush());
     public static final RegistryObject<Block> EMPTY_CUP = BLOCKS.register("empty_cup", () -> new BlockEmptyCup());
+    public static final RegistryObject<Block> FULL_COFFEE_CUP = BLOCKS.register("full_coffee_cup", () -> new BlockFullCoffeeCup());
+    public static final RegistryObject<Block> HALF_COFFEE_CUP = BLOCKS.register("half_coffee_cup", () -> new BlockHalfCoffeeCup());
     public static final RegistryObject<Item> TEA_SEED = ITEMS.register("tea_seed", () -> new ItemTeaSeed());
-    public static final RegistryObject<Item> TEA_LEAVES  = ITEMS.register("tea_leaves", () -> new ItemTeaLeaves());
-    public static final RegistryObject<Item> WATER_CUP  = ITEMS.register("water_cup", () -> new ItemWaterCup());
+    public static final RegistryObject<Item> TEA_LEAVES = ITEMS.register("tea_leaves", () -> new ItemTeaLeaves());
+    public static final RegistryObject<Item> WATER_CUP = ITEMS.register("water_cup", () -> new ItemWaterCup());
     public static final RegistryObject<Item> CLAY_CUP = ITEMS.register("clay_cup", () -> new ItemClayCup());
     public static final RegistryObject<Item> ROASTED_COFFEE_BEAN = ITEMS.register("roasted_coffee_bean", () -> new ItemRoastedCoffeeBean());
     public static final RegistryObject<Item> BOILING_CUP = ITEMS.register("boiling_cup", () -> new ItemBoilingCup());
-    public static final RegistryObject<Item> UNROASTED_COFFEE_BEAN  = ITEMS.register("unroasted_coffee_bean", () -> new ItemUnroastedCoffeeBean());
-    public static final RegistryObject<Item> EMPTY_CUP_ITEM_BLOCK = ITEMS.register("empty_cup", () -> new ItemBlockEmptyCup());
-
+    public static final RegistryObject<Item> UNROASTED_COFFEE_BEAN = ITEMS.register("unroasted_coffee_bean", () -> new ItemUnroastedCoffeeBean());
+    public static final RegistryObject<Item> ITEM_BLOCK_EMPTY_CUP = ITEMS.register("empty_cup", () -> new ItemBlockEmptyCup());
+    public static final RegistryObject<Item> ITEM_BLOCK_FULL_COFFEE_CUP = ITEMS.register("full_coffee_cup", () -> new ItemBlockFullCoffeeCup());
+    public static final RegistryObject<Item> ITEM_BLOCK_HALF_COFFEE_CUP = ITEMS.register("half_coffee_cup", () -> new ItemBlockHalfCoffeeCup());
 
     public static final CreativeModeTab TAB = new CreativeModeTab(MODID) {
         @Override
