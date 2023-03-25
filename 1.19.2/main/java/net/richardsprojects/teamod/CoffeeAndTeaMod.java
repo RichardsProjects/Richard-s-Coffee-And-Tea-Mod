@@ -38,6 +38,7 @@ public class CoffeeAndTeaMod
     public static final RegistryObject<Item> WATER_CUP = ITEMS.register("water_cup", () -> new ItemWaterCup());
     public static final RegistryObject<Item> CLAY_CUP = ITEMS.register("clay_cup", () -> new ItemClayCup());
     public static final RegistryObject<Item> ROASTED_COFFEE_BEAN = ITEMS.register("roasted_coffee_bean", () -> new ItemRoastedCoffeeBean());
+    public static final RegistryObject<Item> COFFEE_GROUNDS = ITEMS.register("coffee_grounds", () -> new ItemCoffeeGrounds());
     public static final RegistryObject<Item> BOILING_CUP = ITEMS.register("boiling_cup", () -> new ItemBoilingCup());
     public static final RegistryObject<Item> UNROASTED_COFFEE_BEAN = ITEMS.register("unroasted_coffee_bean", () -> new ItemUnroastedCoffeeBean());
     public static final RegistryObject<Item> ITEM_BLOCK_EMPTY_CUP = ITEMS.register("empty_cup", () -> new ItemBlockEmptyCup());

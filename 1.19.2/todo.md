@@ -16,14 +16,16 @@
     [X] Add boiling water cup furnace recipe
     [X] Add loot table for empty cup    
  
-[ ] Add Coffee cups to the mod
+[X] Add Coffee cups to the mod
 
     [X] Implement item model, 3d model and block placement (full cup)
     [X] Implement item model, 3d model and block placement (half cup)
     [X] Add recipe
-    [ ] Add coffee grounds so that recipe works
-    [ ] Allow full coffee cups to be drank from
-    [ ] Allow half coffee cups to be drank from
+    [X] Add coffee grounds so that recipe works
+    [X] Allow full coffee cups to be drank from
+    [X] Allow half coffee cups to be drank from
+
+[ ] Add sugar coffee cups
 
 [ ] Add Mortar and Pestle Block to the mod
 
