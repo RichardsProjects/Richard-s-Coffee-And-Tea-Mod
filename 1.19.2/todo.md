@@ -25,20 +25,18 @@
     [X] Allow full coffee cups to be drank from
     [X] Allow half coffee cups to be drank from
 
-[ ] Add sugar coffee cups
+[X] Add Mortar and Pestle Block to the mod
 
-[ ] Add Mortar and Pestle Block to the mod
-
-    [ ] ItemBlock
-    [ ] Block and Tile Entity
-    [ ] PlayEvent when Mortar and Pestle breaks (use anvil break)
-    [ ] Give warnings durability less than or equal to 10
-    [ ] Make use lower NBT durability data
-    [ ] Make sure durability gets preserved between logins
-    [ ] Allow it to be used to grind coffee beans
-    [ ] Add crafting recipe
-    [ ] Get it to drop a damaged version of it when broken
-    [ ] Get it to place with the correct amount of durability left
+    [X] ItemBlock
+    [X] Block and Block Entity
+    [X] PlayEvent when Mortar and Pestle breaks (use anvil break)
+    [X] Give warnings durability less than or equal to 10
+    [X] Make use lower NBT durability data
+    [X] Figure out why durability is not preserved between logins
+    [X] Allow it to be used to grind coffee beans
+    [X] Add crafting recipe
+    [X] Get it to drop a damaged version of it when broken
+    [X] Get it to place with the correct amount of durability left
 
 [ ] Final things
     

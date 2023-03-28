@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "teamod:block/mortar_and_pestle" },
+        "facing=south": { "model": "teamod:block/mortar_and_pestle", "y": 180 },
+        "facing=west":  { "model": "teamod:block/mortar_and_pestle", "y": 270 },
+        "facing=east":  { "model": "teamod:block/mortar_and_pestle", "y": 90 }
+    }
+}
