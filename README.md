@@ -1,4 +1,4 @@
-![](http://cf.way2muchnoise.eu/full_267513_downloads.svg) ![](https://tokei.rs/b1/github/richardsprojects/richard-s-coffee-and-tea-mod?category=code) ![](https://tokei.rs/b1/github/richardsprojects/richard-s-coffee-and-tea-mod?category=files)
+<a href="https://www.curseforge.com/minecraft/mc-mods/richards-coffee-tea-mod"><img src="http://cf.way2muchnoise.eu/full_267513_downloads.svg" /></a>  ![](https://tokei.rs/b1/github/richardsprojects/richard-s-coffee-and-tea-mod?category=code) ![](https://tokei.rs/b1/github/richardsprojects/richard-s-coffee-and-tea-mod?category=files)
  
 Coffee and Tea Mod (Minecraft Mod)
 ==============
