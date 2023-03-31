@@ -1,4 +1,4 @@
-![](https://tokei.rs/b1/github/richardsprojects/richard-s-coffee-and-tea-mod?category=code) ![](https://tokei.rs/b1/github/richardsprojects/richard-s-coffee-and-tea-mod?category=files)
+![](http://cf.way2muchnoise.eu/full_267513_downloads.svg) ![](https://tokei.rs/b1/github/richardsprojects/richard-s-coffee-and-tea-mod?category=code) ![](https://tokei.rs/b1/github/richardsprojects/richard-s-coffee-and-tea-mod?category=files)
  
 Coffee and Tea Mod (Minecraft Mod)
 ==============
