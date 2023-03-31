@@ -19,6 +19,10 @@ public class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(CoffeeAndTeaMod.EMPTY_CUP.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CoffeeAndTeaMod.FULL_COFFEE_CUP.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CoffeeAndTeaMod.HALF_COFFEE_CUP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CoffeeAndTeaMod.FULL_TEA_CUP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CoffeeAndTeaMod.FULL_TEA_CUP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CoffeeAndTeaMod.FULL_COFFEE_SUGAR_CUP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(CoffeeAndTeaMod.HALF_COFFEE_SUGAR_CUP.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(CoffeeAndTeaMod.MORTAR_AND_PESTLE.get(), RenderType.cutout());
     }
 

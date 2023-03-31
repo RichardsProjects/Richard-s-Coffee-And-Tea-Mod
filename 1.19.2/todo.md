@@ -40,5 +40,9 @@
 
 [ ] Final things
     
-    [ ] Add Tea Cups to the mod
-    [ ] Add Coffee Cups with Sugar to the mod
+    [X] Add Tea Cups to the mod
+        [X] Add full tea cups
+        [X] Make full tea cups turn into half tea cups when drank from    
+        [X] Add half tea cups
+        
+    [X] Add Coffee Cups with Sugar to the mod

@@ -81,6 +81,24 @@ public class BlockMortarAndPestle extends BaseEntityBlock {
             }
         }
 
+        if (itemInUse != null && itemInUse.getItem() == CoffeeAndTeaMod.TEA_LEAVES.get()) {
+            reduceDurability = true;
+            if (level.isClientSide) {
+                level.levelEvent(1030, blockPos, 0);
+            }
+
+            if (!level.isClientSide) {
+                if (itemInUse.getCount() > 0) {
+                    itemInUse.shrink(1);
+                } else {
+                    player.getInventory().setItem(player.getInventory().selected, null);
+                }
+                ItemEntity item = new ItemEntity(player.level, blockPos.getX(), blockPos.getY() + 1, blockPos.getZ(),
+                        new ItemStack(CoffeeAndTeaMod.GROUND_TEA_LEAVES.get(), 1));
+                level.addFreshEntity(item);
+            }
+        }
+
         if (reduceDurability) reduceDurability(player, level, blockPos);
 
         return InteractionResult.SUCCESS;

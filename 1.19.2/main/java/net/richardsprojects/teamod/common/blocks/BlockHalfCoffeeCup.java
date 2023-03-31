@@ -62,7 +62,7 @@ public class BlockHalfCoffeeCup extends Block {
             newState = newState.setValue(BlockEmptyCup.FACING, state.getValue(FACING));
             level.setBlock(pos, newState, 3);
 
-            return InteractionResult.PASS;
+            return InteractionResult.CONSUME_PARTIAL;
         }
     }
 

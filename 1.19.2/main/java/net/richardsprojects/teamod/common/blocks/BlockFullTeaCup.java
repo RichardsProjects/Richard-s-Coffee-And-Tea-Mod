@@ -11,7 +11,6 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
@@ -21,12 +20,12 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.richardsprojects.teamod.CoffeeAndTeaMod;
 
-public class BlockFullCoffeeCup extends Block {
+public class BlockFullTeaCup extends Block {
 
     public static final DirectionProperty FACING = DirectionProperty.create("facing");
 
-    public BlockFullCoffeeCup() {
-        super(BlockBehaviour.Properties.of(Material.CLAY));
+    public BlockFullTeaCup() {
+        super(Properties.of(Material.CLAY));
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
@@ -49,18 +48,18 @@ public class BlockFullCoffeeCup extends Block {
     }
 
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult result) {
-        return drinkCoffee(level, blockPos, blockState, player);
+        return drinkTea(level, blockPos, blockState, player);
     }
 
-    private InteractionResult drinkCoffee(Level level, BlockPos pos, BlockState state, Player player) {
+    private InteractionResult drinkTea(Level level, BlockPos pos, BlockState state, Player player) {
         if (!player.canEat(false)) {
             return InteractionResult.FAIL;
         } else {
             player.getFoodData().eat(2, 1F);
-            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1200, 0));
+            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 1200, 0));
 
-            BlockState newState = CoffeeAndTeaMod.HALF_COFFEE_CUP.get().defaultBlockState();
-            newState = newState.setValue(BlockHalfCoffeeCup.FACING, state.getValue(BlockFullCoffeeCup.FACING));
+            BlockState newState = CoffeeAndTeaMod.HALF_TEA_CUP.get().defaultBlockState();
+            newState = newState.setValue(BlockEmptyCup.FACING, state.getValue(BlockFullTeaCup.FACING));
             level.setBlock(pos, newState, 3);
 
             return InteractionResult.CONSUME_PARTIAL;
