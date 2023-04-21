@@ -1,0 +1,13 @@
+{
+  "type": "teamod:seed_drops",
+  "conditions": [
+    {
+      "condition": "minecraft:random_chance",
+      "chance": 0.0625
+    },
+    {
+      "condition": "block_state_property",
+      "block": "minecraft:fern"
+    }
+  ]
+}

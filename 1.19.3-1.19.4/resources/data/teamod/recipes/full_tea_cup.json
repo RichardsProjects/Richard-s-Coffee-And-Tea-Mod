@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "yyy",
+    "yxy",
+    "yyy"
+  ],
+  "key":
+  {
+    "x":
+    {
+      "item": "teamod:boiling_cup"
+    },
+    "y":
+    {
+      "item": "teamod:ground_tea_leaves"
+    }
+  },
+  "result":
+  {
+    "item": "teamod:full_tea_cup",
+    "count": 1
+  }
+}

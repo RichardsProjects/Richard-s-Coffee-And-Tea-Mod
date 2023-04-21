@@ -1,0 +1,8 @@
+{
+    "pack": {
+        "description": "Richard's Coffee & Tea Mod Pack",
+        "pack_format": 12,
+        "forge:resource_pack_format": 12,
+        "forge:data_pack_format": 10
+    }
+}
