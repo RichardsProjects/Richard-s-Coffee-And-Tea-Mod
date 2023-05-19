@@ -57,7 +57,7 @@ public class CoffeeAndTeaMod
     public static final RegistryObject<Item> ITEM_BLOCK_HALF_COFFEE_SUGAR_CUP = ITEMS.register("half_coffee_sugar_cup", () -> new ItemBlockHalfCoffeeSugarCup());
     public static final RegistryObject<Item> ITEM_BLOCK_HALF_COFFEE_CUP = ITEMS.register("half_coffee_cup", () -> new ItemBlockHalfCoffeeCup());
     public static final RegistryObject<Item> ITEM_BLOCK_FULL_TEA_CUP = ITEMS.register("full_tea_cup", () -> new ItemBlockFullTeaCup());
-    public static final RegistryObject<Item> ITEM_BLOCK_HALF_TEA_CUP = ITEMS.register("half_tea_cup", () -> new ItemBlockFullTeaCup());
+    public static final RegistryObject<Item> ITEM_BLOCK_HALF_TEA_CUP = ITEMS.register("half_tea_cup", () -> new ItemBlockHalfTeaCup());
     public static final RegistryObject<Item> ITEM_BLOCK_MORTAR_AND_PESTLE = ITEMS.register("mortar_and_pestle", () -> new ItemBlockMortarAndPestle());
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
