@@ -1,5 +1,6 @@
 package net.richardsprojects.teamod.common.blocks;
 
+import com.google.common.base.Optional;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
