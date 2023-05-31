@@ -23,7 +23,7 @@ public class BlockTeaBush extends CropBlock {
             Block.box(3.5D, -1.0D, 3.5D, 12.4D, 8.0D, 12.5D),
             Block.box(2.5D, -1.0D, 2.5D, 13.5D, 10.0D, 13.5D),
             Block.box(1.5D, -1.0D, 1.5D, 14.5D, 13D, 14.5D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)
+            Block.box(0.0D, -1.0D, 0.0D, 16.0D, 16.0D, 16.0D)
     };
 
     public BlockTeaBush() {
