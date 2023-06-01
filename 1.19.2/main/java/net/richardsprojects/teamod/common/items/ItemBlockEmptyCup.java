@@ -32,7 +32,6 @@ public class ItemBlockEmptyCup extends ItemNameBlockItem {
         super(CoffeeAndTeaMod.EMPTY_CUP.get(), new Item.Properties().tab(CoffeeAndTeaMod.TAB));
     }
 
-
     @Override
     public InteractionResult useOn(UseOnContext context) {
         BlockHitResult result = getPlayerPOVHitResult(context.getLevel(), context.getPlayer(), ClipContext.Fluid.SOURCE_ONLY);
