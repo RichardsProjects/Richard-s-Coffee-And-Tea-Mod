@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "age=0": { "model": "teamod:block/bush_0" },
+        "age=1": { "model": "teamod:block/coffee_bush_1" },
+        "age=2": { "model": "teamod:block/coffee_bush_2" },
+        "age=3": { "model": "teamod:block/coffee_bush_3" },
+        "age=4": { "model": "teamod:block/coffee_bush_4" },
+        "age=5": { "model": "teamod:block/coffee_bush_5" },
+        "age=6": { "model": "teamod:block/coffee_bush_6" },
+        "age=7": { "model": "teamod:block/coffee_bush_7" }
+    }
+}

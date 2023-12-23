@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "entries": [
+    "teamod:grass_seeds",
+    "teamod:tall_grass_seeds",
+    "teamod:fern_seeds",
+    "teamod:large_fern_seeds"
+  ]
+}

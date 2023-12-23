@@ -1,0 +1,4 @@
+{
+    "render_type": "cutout",
+    "parent": "minecraft:block/wheat_stage0"
+}
