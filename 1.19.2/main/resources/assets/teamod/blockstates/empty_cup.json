@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "teamod:block/empty_cup" },
-        "facing=south": { "model": "teamod:block/empty_cup", "y": 180 },
-        "facing=west":  { "model": "teamod:block/empty_cup", "y": 270 },
-        "facing=east":  { "model": "teamod:block/empty_cup", "y": 90 }
-    }
-}

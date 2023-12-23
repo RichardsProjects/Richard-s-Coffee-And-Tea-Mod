@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "teamod:emptyCup" },
-        "facing=south": { "model": "teamod:emptyCup", "y": 180 },
-        "facing=west":  { "model": "teamod:emptyCup", "y": 270 },
-        "facing=east":  { "model": "teamod:emptyCup", "y": 90 }
-    }
-}

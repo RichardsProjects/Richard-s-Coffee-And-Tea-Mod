@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:smelting",
-  "ingredient": {"item": "teamod:clay_cup"},
-  "result": "teamod:empty_cup",
-  "experience": 0.5,
-  "cookingtime": 200
-
-}

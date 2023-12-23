@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:campfire_cooking",
-  "ingredient": {"item": "teamod:water_cup"},
-  "result": "teamod:boiling_cup",
-  "experience": 2.0,
-  "cookingtime": 200
-
-}

@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "teamod:fullTeaCup" },
-        "facing=south": { "model": "teamod:fullTeaCup", "y": 180 },
-        "facing=west":  { "model": "teamod:fullTeaCup", "y": 270 },
-        "facing=east":  { "model": "teamod:fullTeaCup", "y": 90 }
-    }
-}
